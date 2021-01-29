@@ -175,6 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="anova.html"><a href="anova.html#two-way-multi-way-interaction"><i class="fa fa-check"></i><b>3.3</b> Two-Way, Multi-Way &amp; Interaction</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="anova.html"><a href="anova.html#exercises-7"><i class="fa fa-check"></i><b>3.3.1</b> Exercises</a></li>
+<li class="chapter" data-level="3.3.2" data-path="anova.html"><a href="anova.html#additional-exercises"><i class="fa fa-check"></i><b>3.3.2</b> Additional Exercises (*)</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="anova.html"><a href="anova.html#where-is-part-4"><i class="fa fa-check"></i><b>3.4</b> Where is part 4? (*)</a></li>
 </ul></li>
@@ -304,6 +305,23 @@ Residuals   48   5745     y                       </code></pre>
 </iframe>
 <div id="exercises-7" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Exercises</h3>
+<ol style="list-style-type: decimal">
+<li>In an experiment on rats, a researcher wanted to find out what the effect would be of the genotype of the biological mother and the foster mother on the growth of the rats.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="math inline">\(61\)</span> rat litters were taken from their See the figure below. Is an interaction or or are there main effects here? Explain.</li>
+</ol>
+<p><img src="General-Research-Skills_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Based on your answer to the previous question, run an appropriate ANOVA for the following data set:</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="anova.html#cb12-1"></a><span class="kw">require</span>(<span class="st">&quot;MASS&quot;</span>) <span class="co"># Comes preinstalled with R</span></span>
+<span id="cb12-2"><a href="anova.html#cb12-2"></a><span class="kw">str</span>(genotype)</span>
+<span id="cb12-3"><a href="anova.html#cb12-3"></a><span class="kw">summary</span>(genotype)</span></code></pre></div>
+</div>
+<div id="additional-exercises" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Additional Exercises (*)</h3>
+<p><img src="figures/Iris.png" width="100%" /></p>
+<ol style="list-style-type: decimal">
+<li>The <code>iris</code> data set is included with the default installation of R. It contains <span class="math inline">\(150\)</span> independent measurements of sepal and petal dimensions from three types of <em>Iris</em> species. Choose one of: <code>Sepal.Length</code>, <code>Petal.Length</code>, <code>Sepal.Width</code> and <code>Petal.Width</code> and perform a complete analysis to find out whether species differ on average.</li>
+</ol>
 </div>
 </div>
 <div id="where-is-part-4" class="section level2">
@@ -318,6 +336,7 @@ Residuals   48   5745     y                       </code></pre>
 <hr />
 <ol start="2">
 <li id="fn2"><p><small><b>List of problems and how to fix them</b>: (1) If you get an error about a <b>missing package</b>, install <code>car</code> using <code>install.packages("car")</code>, then run diagnostic plots code again. (2) If you <b>can’t install <code>car</code></b>, replace <code>qqPlot(ANOVA, reps = 10e4)</code> with: <code>plot(ANOVA, which = 2)</code>. (3) If you get an error about <b>figure margins</b> being too small, simply enlarge your plot pane as shown <a href="https://youtu.be/eKKil5iyxLM?t=138">here</a>, then run the diagnostic plots code again.</small><a href="anova.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p><small>Bailey, D. W. (1953): <em>The Inheritance of Maternal Influences on the Growth of the Rat.</em> Unpublished Ph.D. thesis, University of California. Table B of the Appendix.</small><a href="anova.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

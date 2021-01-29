@@ -24,6 +24,7 @@ how-does-anova-work
 exercises-6
 two-way-multi-way-interaction
 exercises-7
+additional-exercises
 where-is-part-4
 simple-linear-regression
 lecture-linear-regression
