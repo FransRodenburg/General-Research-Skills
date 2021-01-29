@@ -50,6 +50,10 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -236,21 +240,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The <code>PlantGrowth</code> data set is included with the default installation of R. It contains <span class="math inline">\(30\)</span> independent measurements of dry weight from plants subjected to three types of treatment. You can view it by running <code>View(PlantGrowth)</code> in the console, or you can see the structure of the data and produce a summary of the data like this:</li>
 </ol>
 <p><small></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="anova.html#cb1-1"></a><span class="kw">str</span>(PlantGrowth)</span>
-<span id="cb1-2"><a href="anova.html#cb1-2"></a><span class="kw">summary</span>(PlantGrowth)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="anova.html#cb8-1"></a><span class="kw">str</span>(PlantGrowth)</span>
+<span id="cb8-2"><a href="anova.html#cb8-2"></a><span class="kw">summary</span>(PlantGrowth)</span></code></pre></div>
 <p></small></p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Make a plot showing the weight of the different groups. You can use the same kind of plot as <a href="https://youtu.be/BFB4o4uBgPs?t=132">shown in the video</a>.</p></li>
 <li><p>Fit an ANOVA and save it as an object called <code>ANOVA</code>.</p></li>
-<li><p>Here is the code I used in the video to perform visual diagnostics. Run it and comment on the plots.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>Here is the code I used in the video to perform visual diagnostics. Run it and comment on the plots.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="anova.html#cb2-1"></a><span class="kw">require</span>(<span class="st">&quot;car&quot;</span>)            <span class="co"># Install if missing</span></span>
-<span id="cb2-2"><a href="anova.html#cb2-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))      <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb2-3"><a href="anova.html#cb2-3"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
-<span id="cb2-4"><a href="anova.html#cb2-4"></a><span class="kw">qqPlot</span>(ANOVA, <span class="dt">reps =</span> <span class="fl">1e4</span>) <span class="co"># QQ-plot. See footnote for errors</span></span>
-<span id="cb2-5"><a href="anova.html#cb2-5"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
-<span id="cb2-6"><a href="anova.html#cb2-6"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
-<span id="cb2-7"><a href="anova.html#cb2-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))      <span class="co"># Restore the default</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="anova.html#cb9-1"></a><span class="kw">require</span>(<span class="st">&quot;car&quot;</span>)            <span class="co"># Install if missing</span></span>
+<span id="cb9-2"><a href="anova.html#cb9-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))      <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb9-3"><a href="anova.html#cb9-3"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
+<span id="cb9-4"><a href="anova.html#cb9-4"></a><span class="kw">qqPlot</span>(ANOVA, <span class="dt">reps =</span> <span class="fl">1e4</span>) <span class="co"># QQ-plot. See footnote for errors</span></span>
+<span id="cb9-5"><a href="anova.html#cb9-5"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
+<span id="cb9-6"><a href="anova.html#cb9-6"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
+<span id="cb9-7"><a href="anova.html#cb9-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))      <span class="co"># Restore the default</span></span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Perform the omnibus test. Is there a difference in weight among any of the groups?</p></li>
 <li><p>Perform a post hoc analysis. Which group means differ significantly?</p></li>
@@ -312,8 +316,8 @@ Residuals   48   5745     y                       </code></pre>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p><small><b>List of problems and how to fix them</b>: (1) If you get an error about a <b>missing package</b>, install <code>car</code> using <code>install.packages("car")</code>, then run diagnostic plots code again. (2) If you <b>can’t install <code>car</code></b>, replace <code>qqPlot(ANOVA, reps = 10e4)</code> with: <code>plot(ANOVA, which = 2)</code>. (3) If you get an error about <b>figure margins</b> being too small, simply enlarge your plot pane as shown <a href="https://youtu.be/eKKil5iyxLM?t=138">here</a>, then run the diagnostic plots code again.</small><a href="anova.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p><small><b>List of problems and how to fix them</b>: (1) If you get an error about a <b>missing package</b>, install <code>car</code> using <code>install.packages("car")</code>, then run diagnostic plots code again. (2) If you <b>can’t install <code>car</code></b>, replace <code>qqPlot(ANOVA, reps = 10e4)</code> with: <code>plot(ANOVA, which = 2)</code>. (3) If you get an error about <b>figure margins</b> being too small, simply enlarge your plot pane as shown <a href="https://youtu.be/eKKil5iyxLM?t=138">here</a>, then run the diagnostic plots code again.</small><a href="anova.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
