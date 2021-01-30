@@ -271,6 +271,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="exercises-6" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Exercises</h3>
 <ol style="list-style-type: decimal">
+<li>Are the following statements <b>true</b> or <b>false</b>?</li>
+</ol>
+<ul>
+<li>The omnibus test is used to see which of <span class="math inline">\(k\)</span> group means differ;</li>
+<li>The omnibus test is an <span class="math inline">\(F\)</span>-test;</li>
+<li>The residual variance is smaller than the total variance in the outcome;</li>
+<li>The <span class="math inline">\(p\)</span>-value is the chance of obtaining an <span class="math inline">\(F\)</span>-value at least this large if there were no differences in group means;</li>
+<li>The post hoc of a one-way ANOVA must still be corrected for multiple testing.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
 <li>Below is the output of an omnibus test of some data:</li>
 </ol>
 <pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
@@ -281,7 +291,7 @@ Residuals   147  38.96   0.265                   </code></pre>
 <li>What is the total sample size?</li>
 <li>What does <code>Pr(&gt;F)</code> mean?</li>
 </ul>
-<ol start="2" style="list-style-type: decimal">
+<ol start="3" style="list-style-type: decimal">
 <li>Here is another omnibus test, but with some values omitted:</li>
 </ol>
 <pre><code>            Df Sum Sq Mean Sq F value   Pr(&gt;F)    
@@ -292,7 +302,7 @@ Residuals   48   5745     y                       </code></pre>
 <li>What is the value of <code>y</code>?</li>
 <li>What is the value of <code>z</code>?</li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li>Why do we bother with an omnibus test, why not just use the post hoc immediately after fitting the model?</li>
 </ol>
 <hr />
@@ -305,23 +315,34 @@ Residuals   48   5745     y                       </code></pre>
 </iframe>
 <div id="exercises-7" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Exercises</h3>
-<ol style="list-style-type: decimal">
-<li>In an experiment on rats, a researcher wanted to find out what the effect would be of the genotype of the biological mother and the foster mother on the growth of the rats.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="math inline">\(61\)</span> rat litters were taken from their See the figure below. Is an interaction or or are there main effects here? Explain.</li>
-</ol>
+<p>In an experiment on rats, a researcher wanted to find out what the effect would be of the genotype of the biological mother and the foster mother on the growth of the rats.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="math inline">\(61\)</span> rat litters were taken from their biological mother and placed with a foster mother. See the figure below.</p>
 <p><img src="General-Research-Skills_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
-<ol start="2" style="list-style-type: decimal">
-<li>Based on your answer to the previous question, run an appropriate ANOVA for the following data set:</li>
+<ol style="list-style-type: decimal">
+<li><p>Which is suitable here: One-way, two-way, or multi-way ANOVA?</p></li>
+<li><p>Do you expect an interaction or main effects here? Explain.</p></li>
+<li><p>Based on your answer to the previous question, run an appropriate ANOVA for this data set. Perform visual diagnostics, look at the <code>summary</code>, and perform a post hoc analysis. Write a short conclusion. The data set is called <code>genotype</code> and you can access it by loading the package <code>MASS</code>:</p></li>
 </ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="anova.html#cb12-1"></a><span class="kw">require</span>(<span class="st">&quot;MASS&quot;</span>) <span class="co"># Comes preinstalled with R</span></span>
 <span id="cb12-2"><a href="anova.html#cb12-2"></a><span class="kw">str</span>(genotype)</span>
 <span id="cb12-3"><a href="anova.html#cb12-3"></a><span class="kw">summary</span>(genotype)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>(hard) Search online for the definition of the <a href="http://www.google.com/search?q=central+limit+theorem">central limit theorem</a>. Is normality of the residuals a reasonable assumption for this study from a theoretical point of view? <small><em>(HINT: Look at the help page for the <code>genotype</code> data set and read the description of the outcome variable.)</em></small></li>
+</ol>
 </div>
 <div id="additional-exercises" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Additional Exercises (*)</h3>
 <p><img src="figures/Iris.png" width="100%" /></p>
 <ol style="list-style-type: decimal">
-<li>The <code>iris</code> data set is included with the default installation of R. It contains <span class="math inline">\(150\)</span> independent measurements of sepal and petal dimensions from three types of <em>Iris</em> species. Choose one of: <code>Sepal.Length</code>, <code>Petal.Length</code>, <code>Sepal.Width</code> and <code>Petal.Width</code> and perform a complete analysis to find out whether species differ on average.</li>
+<li><p>The <code>iris</code> data set is included with the default installation of R. It contains <span class="math inline">\(150\)</span> independent measurements of sepal and petal dimensions from three types of <em>Iris</em> species. Choose one of: <code>Sepal.Length</code>, <code>Petal.Length</code>, <code>Sepal.Width</code> and <code>Petal.Width</code> and perform a complete analysis to find out whether species differ on average.</p></li>
+<li><p>In this exercise we are going to calculate how much variance your ANOVA from the previous exercise has explained. Remember the animation from the video:</p></li>
 </ol>
+<p><img src="figures/ANOVA.gif" /><!-- --></p>
+<ul>
+<li>Estimate the total variance in the outcome using <code>var()</code>;</li>
+<li>Estimate the residual variance. You can obtain the residuals of a model using <code>residuals()</code> on the fitted model;</li>
+<li>The variance explained is one minus the proportion of the total variance that remains after fitting the model. How much variance did your model explain?</li>
+<li>If your model is called <code>ANOVA</code>, then you can check your answer as follows: <code>summary(lm(ANOVA))$r.squared</code>. Did you get the calculation right? This value will be explained again in the linear regression lectures.</li>
+</ul>
 </div>
 </div>
 <div id="where-is-part-4" class="section level2">
