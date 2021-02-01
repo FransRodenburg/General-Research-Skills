@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 6 ANOVA | General Research Skills</title>
-  <meta name="description" content="Chapter 6 ANOVA | General Research Skills" />
+  <title>Chapter 4 Hypothesis Testing | General Research Skills</title>
+  <meta name="description" content="Chapter 4 Hypothesis Testing | General Research Skills" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 6 ANOVA | General Research Skills" />
+  <meta property="og:title" content="Chapter 4 Hypothesis Testing | General Research Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 6 ANOVA | General Research Skills" />
+  <meta name="twitter:title" content="Chapter 4 Hypothesis Testing | General Research Skills" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="statistical-tests.html"/>
-<link rel="next" href="simple-linear-regression.html"/>
+<link rel="prev" href="study-design.html"/>
+<link rel="next" href="statistical-tests.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -240,148 +240,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="anova" class="section level1">
-<h1><span class="header-section-number">Chapter 6</span> ANOVA</h1>
-<p><small><i>Analysis of variance (ANOVA) is a model for <b>comparing any number of group means</b>. The observations are assumed to be <b>independent</b>, deviations from the group means are assumed to follow a <b>normal distribution</b>, and group <b>variances are assumed to be equal</b>.</i></small></p>
+<div id="hypothesis-testing" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Hypothesis Testing</h1>
+<p><small><i>In this chapter by Dr. H.G.J. van Mil, the concept of a test statistic is explained.</i></small></p>
 <hr />
-<div id="overview" class="section level2">
-<h2><span class="header-section-number">6.1</span> Overview</h2>
-<p>Watch part 1 of the ANOVA lecture and answer the questions below.</p>
-<iframe src="https://www.youtube.com/embed/BFB4o4uBgPs" width="672" height="400px">
-</iframe>
-<div id="exercises-7" class="section level3">
-<h3><span class="header-section-number">6.1.1</span> Exercises</h3>
-<p><img src="figures/PlantGrowth.png" width="100%" /></p>
-<ol style="list-style-type: decimal">
-<li>The <code>PlantGrowth</code> data set is included with the default installation of R. It contains <span class="math inline">\(30\)</span> independent measurements of dry weight from plants subjected to three types of treatment. You can view it by running <code>View(PlantGrowth)</code> in the console, or you can see the structure of the data and produce a summary of the data like this:</li>
-</ol>
-<p><small></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="anova.html#cb8-1"></a><span class="kw">str</span>(PlantGrowth)</span>
-<span id="cb8-2"><a href="anova.html#cb8-2"></a><span class="kw">summary</span>(PlantGrowth)</span></code></pre></div>
-<p></small></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Make a plot showing the weight of the different groups. You can use the same kind of plot as <a href="https://youtu.be/BFB4o4uBgPs?t=132">shown in the video</a>.</p></li>
-<li><p>Fit an ANOVA and save it as an object called <code>ANOVA</code>.</p></li>
-<li><p>Here is the code I used in the video to perform visual diagnostics. Run it and comment on the plots.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="anova.html#cb9-1"></a><span class="kw">require</span>(<span class="st">&quot;car&quot;</span>)            <span class="co"># Install if missing</span></span>
-<span id="cb9-2"><a href="anova.html#cb9-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))      <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb9-3"><a href="anova.html#cb9-3"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
-<span id="cb9-4"><a href="anova.html#cb9-4"></a><span class="kw">qqPlot</span>(ANOVA, <span class="dt">reps =</span> <span class="fl">1e4</span>) <span class="co"># QQ-plot. See footnote for errors</span></span>
-<span id="cb9-5"><a href="anova.html#cb9-5"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
-<span id="cb9-6"><a href="anova.html#cb9-6"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
-<span id="cb9-7"><a href="anova.html#cb9-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))      <span class="co"># Restore the default</span></span></code></pre></div>
-<ol start="5" style="list-style-type: decimal">
-<li><p>Perform the omnibus test. Is there a difference in weight among any of the groups?</p></li>
-<li><p>Perform a post hoc analysis. Which group means differ significantly?</p></li>
-</ol>
-<hr />
+<div id="lecture-study-design-1" class="section level2">
+<h2><span class="header-section-number">4.1</span> Lecture: Study Design</h2>
 </div>
-</div>
-<div id="how-does-anova-work" class="section level2">
-<h2><span class="header-section-number">6.2</span> How does ANOVA work?</h2>
-<p>Watch part 2 of the ANOVA lecture and answer the questions below.</p>
-<iframe src="https://www.youtube.com/embed/87ECInQIY9k" width="672" height="400px">
-</iframe>
-<div id="exercises-8" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> Exercises</h3>
-<ol style="list-style-type: decimal">
-<li>Are the following statements <b>true</b> or <b>false</b>?</li>
-</ol>
-<ul>
-<li>The omnibus test is used to see which of <span class="math inline">\(k\)</span> group means differ;</li>
-<li>The omnibus test is an <span class="math inline">\(F\)</span>-test;</li>
-<li>The residual variance is smaller than the total variance in the outcome;</li>
-<li>The <span class="math inline">\(p\)</span>-value is the chance of obtaining an <span class="math inline">\(F\)</span>-value at least this large if there were no differences in group means;</li>
-<li>The post hoc of a one-way ANOVA must still be corrected for multiple testing.</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Below is the output of an omnibus test of some data:</li>
-</ol>
-<pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
-Species       2  63.21  31.606   119.3 &lt;2e-16 ***
-Residuals   147  38.96   0.265                   </code></pre>
-<ul>
-<li>What is the number of groups?</li>
-<li>What is the total sample size?</li>
-<li>What does <code>Pr(&gt;F)</code> mean?</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Here is another omnibus test, but with some values omitted:</li>
-</ol>
-<pre><code>            Df Sum Sq Mean Sq F value   Pr(&gt;F)    
-Group        x   3488   697.5     z   0.000277 ***
-Residuals   48   5745     y                       </code></pre>
-<ul>
-<li>What is the value of <code>x</code>?</li>
-<li>What is the value of <code>y</code>?</li>
-<li>What is the value of <code>z</code>?</li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
-<li>Why do we bother with an omnibus test, why not just use the post hoc immediately after fitting the model?</li>
-</ol>
-<hr />
-</div>
-</div>
-<div id="two-way-multi-way-interaction" class="section level2">
-<h2><span class="header-section-number">6.3</span> Two-Way, Multi-Way &amp; Interaction</h2>
-<p>Watch part 3 of the ANOVA lecture and answer the questions below.</p>
-<iframe src="https://www.youtube.com/embed/kNPl8Vo8Jlk" width="672" height="400px">
-</iframe>
-<div id="exercises-9" class="section level3">
-<h3><span class="header-section-number">6.3.1</span> Exercises</h3>
-<p>In an experiment on rats, a researcher wanted to find out what the effect would be of the genotype of the biological mother and the foster mother on the growth of the rats.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="math inline">\(61\)</span> rat litters were taken from their biological mother and placed with a foster mother. See the figure below.</p>
-<p><img src="General-Research-Skills_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
-<ol style="list-style-type: decimal">
-<li><p>Which is suitable here: One-way, two-way, or multi-way ANOVA?</p></li>
-<li><p>Do you expect an interaction or main effects here? Explain.</p></li>
-<li><p>Based on your answer to the previous question, run an appropriate ANOVA for this data set. Perform visual diagnostics, look at the <code>summary</code>, and perform a post hoc analysis. Write a short conclusion. The data set is called <code>genotype</code> and you can access it by loading the package <code>MASS</code>:</p></li>
-</ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="anova.html#cb12-1"></a><span class="kw">require</span>(<span class="st">&quot;MASS&quot;</span>) <span class="co"># Comes preinstalled with R</span></span>
-<span id="cb12-2"><a href="anova.html#cb12-2"></a><span class="kw">str</span>(genotype)</span>
-<span id="cb12-3"><a href="anova.html#cb12-3"></a><span class="kw">summary</span>(genotype)</span></code></pre></div>
-<ol start="4" style="list-style-type: decimal">
-<li>(hard) Search online for the definition of the <a href="http://www.google.com/search?q=central+limit+theorem">central limit theorem</a>. Is normality of the residuals a reasonable assumption for this study from a theoretical point of view? <small><em>(HINT: Look at the help page for the <code>genotype</code> data set and read the description of the outcome variable.)</em></small></li>
-</ol>
-</div>
-<div id="additional-exercises" class="section level3">
-<h3><span class="header-section-number">6.3.2</span> Additional Exercises (*)</h3>
-<p><img src="figures/Iris.png" width="100%" /></p>
-<ol style="list-style-type: decimal">
-<li><p>The <code>iris</code> data set is included with the default installation of R. It contains <span class="math inline">\(150\)</span> independent measurements of sepal and petal dimensions from three types of <em>Iris</em> species. Choose one of: <code>Sepal.Length</code>, <code>Petal.Length</code>, <code>Sepal.Width</code> and <code>Petal.Width</code> and perform a complete analysis to find out whether species differ on average.</p></li>
-<li><p>In this exercise we are going to calculate how much variance your ANOVA from the previous exercise has explained. Remember the animation from the video:</p></li>
-</ol>
-<p><img src="figures/ANOVA.gif" /><!-- --></p>
-<ul>
-<li>Estimate the total variance in the outcome using <code>var()</code>;</li>
-<li>Estimate the residual variance. You can obtain the residuals of a model using <code>residuals()</code> on the fitted model;</li>
-<li>The variance explained is one minus the proportion of the total variance that remains after fitting the model. How much variance did your model explain?</li>
-<li>If your model is called <code>ANOVA</code>, then you can check your answer as follows: <code>summary(lm(ANOVA))$r.squared</code>. Did you get the calculation right? This value will be explained again in the linear regression lectures.</li>
-</ul>
-</div>
-</div>
-<div id="where-is-part-4" class="section level2">
-<h2><span class="header-section-number">6.4</span> Where is part 4? (*)</h2>
-<p>When you use two- or multi-way ANOVA, Tukey’s Honest Significant Difference only corrects for the categories <em>within</em> each explanatory variable. This quickly becomes problematic: If you’ll recall from the multiple testing lecture, with <span class="math inline">\(\alpha = 0.05\)</span>, with as little as three explanatory variables, you will already have a chance of <span class="math inline">\(1 - (1 - 0.05)^3 \approx 14.3\%\)</span> chance of at least one false positive among all comparisons.</p>
-<p>In order to correct for this, you would need to somehow obtain uncorrected <span class="math inline">\(p\)</span>-values from <code>TukeyHSD</code> and then perform multiple testing correction for the total number of comparisons. This is unfortunately not very easy to do, so <b>Dr. van Mil and I decided that it would not be part of the GRS course</b>.</p>
-<p>We will include this in the Advanced Statistics course for master students. If you are interested, or need this for your internship, please have a look at the <a href="https://cran.r-project.org/web/packages/emmeans/index.html">vignettes of the <code>emmeans</code> package</a>, or wait for me to release part 4 after the course. What a vignette is, is covered in the <a href="https://youtu.be/nTvdC91EyDI?t=120">video on help files</a>.</p>
+<div id="exercises-2" class="section level2">
+<h2><span class="header-section-number">4.2</span> Exercises</h2>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="2">
-<li id="fn2"><p><small><b>List of problems and how to fix them</b>: (1) If you get an error about a <b>missing package</b>, install <code>car</code> using <code>install.packages("car")</code>, then run diagnostic plots code again. (2) If you <b>can’t install <code>car</code></b>, replace <code>qqPlot(ANOVA, reps = 10e4)</code> with: <code>plot(ANOVA, which = 2)</code>. (3) If you get an error about <b>figure margins</b> being too small, simply enlarge your plot pane as shown <a href="https://youtu.be/eKKil5iyxLM?t=138">here</a>, then run the diagnostic plots code again.</small><a href="anova.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p><small>Bailey, D. W. (1953): <em>The Inheritance of Maternal Influences on the Growth of the Rat.</em> Unpublished Ph.D. thesis, University of California. Table B of the Appendix.</small><a href="anova.html#fnref3" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="statistical-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="simple-linear-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="study-design.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="statistical-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
