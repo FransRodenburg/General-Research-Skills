@@ -61,3 +61,4 @@ exercises-13
 overview-of-techniques
 lecture-overview
 exercises-14
+summary-of-the-example-in-the-video-1
