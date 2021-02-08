@@ -43,6 +43,7 @@ additional-exercises
 where-is-part-4
 simple-linear-regression
 overview-1
+LMsummary
 exercises-8
 model-diagnostics
 exercises-9
@@ -61,4 +62,3 @@ exercises-13
 overview-of-techniques
 lecture-overview
 exercises-14
-summary-of-the-example-in-the-video-1

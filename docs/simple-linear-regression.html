@@ -50,6 +50,10 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -193,13 +197,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="anova.html"><a href="anova.html#two-way-multi-way-interaction"><i class="fa fa-check"></i><b>6.3</b> Two-Way, Multi-Way &amp; Interaction</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="anova.html"><a href="anova.html#exercises-7"><i class="fa fa-check"></i><b>6.3.1</b> Exercises</a></li>
-<li><a href="anova.html#additional-exercises-where-is-part-4"><span class="toc-section-number">6.3.2</span> Additional Exercises (<em>)
-## Where is part 4? (</em>)</a></li>
+<li class="chapter" data-level="6.3.2" data-path="anova.html"><a href="anova.html#additional-exercises"><i class="fa fa-check"></i><b>6.3.2</b> Additional Exercises (*)</a></li>
 </ul></li>
+<li class="chapter" data-level="6.4" data-path="anova.html"><a href="anova.html#where-is-part-4"><i class="fa fa-check"></i><b>6.4</b> Where is part 4? (*)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>7</b> Simple Linear Regression</a><ul>
 <li class="chapter" data-level="7.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#overview-1"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#summary-of-the-example-in-the-video-1"><i class="fa fa-check"></i><b>7.1.1</b> Summary of the example in the video</a></li>
+<li class="chapter" data-level="7.1.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#LMsummary"><i class="fa fa-check"></i><b>7.1.1</b> Summary of the example in the video</a></li>
 <li class="chapter" data-level="7.1.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-8"><i class="fa fa-check"></i><b>7.1.2</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.2</b> Model Diagnostics</a><ul>
@@ -255,40 +259,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="figures/LM.gif" /><!-- --></p>
 <p>Here is the illustration of the residuals:</p>
 <p><img src="figures/Residuals.gif" /><!-- --></p>
-<div id="summary-of-the-example-in-the-video-1" class="section level3">
+<div id="LMsummary" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> Summary of the example in the video</h3>
 <p>1. Enter your data: <font color = "gray">(you can use other methods)</font></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="simple-linear-regression.html#cb1-1"></a>BMI &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">18.4</span>, <span class="fl">31.2</span>, <span class="fl">22.7</span>, <span class="fl">21.6</span>, <span class="fl">27.0</span>, <span class="fl">27.1</span>, <span class="fl">17.5</span>, <span class="fl">20.9</span>, <span class="fl">26.6</span>, <span class="fl">27.6</span>,           </span>
-<span id="cb1-2"><a href="simple-linear-regression.html#cb1-2"></a>         <span class="fl">25.2</span>, <span class="fl">25.1</span>, <span class="fl">25.7</span>, <span class="fl">26.1</span>, <span class="fl">32.4</span>, <span class="fl">31.6</span>, <span class="fl">17.2</span>, <span class="fl">29.1</span>, <span class="fl">32.9</span>, <span class="fl">20.6</span>)</span>
-<span id="cb1-3"><a href="simple-linear-regression.html#cb1-3"></a>BFP &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">18.9</span>, <span class="fl">26.0</span>, <span class="fl">22.1</span>, <span class="fl">13.2</span>, <span class="fl">17.3</span>, <span class="fl">22.9</span>, <span class="fl">13.9</span>, <span class="fl">29.2</span>, <span class="fl">35.4</span>, <span class="fl">20.6</span>, </span>
-<span id="cb1-4"><a href="simple-linear-regression.html#cb1-4"></a>         <span class="fl">30.3</span>, <span class="fl">32.1</span>, <span class="fl">27.2</span>, <span class="fl">28.2</span>, <span class="fl">38.2</span>, <span class="fl">31.3</span>, <span class="fl">15.2</span>, <span class="fl">36.7</span>, <span class="fl">24.8</span>, <span class="fl">18.3</span>)</span>
-<span id="cb1-5"><a href="simple-linear-regression.html#cb1-5"></a>DF  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(BMI, BFP)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="simple-linear-regression.html#cb19-1"></a>BMI &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">18.4</span>, <span class="fl">31.2</span>, <span class="fl">22.7</span>, <span class="fl">21.6</span>, <span class="fl">27.0</span>, <span class="fl">27.1</span>, <span class="fl">17.5</span>, <span class="fl">20.9</span>, <span class="fl">26.6</span>, <span class="fl">27.6</span>,           </span>
+<span id="cb19-2"><a href="simple-linear-regression.html#cb19-2"></a>         <span class="fl">25.2</span>, <span class="fl">25.1</span>, <span class="fl">25.7</span>, <span class="fl">26.1</span>, <span class="fl">32.4</span>, <span class="fl">31.6</span>, <span class="fl">17.2</span>, <span class="fl">29.1</span>, <span class="fl">32.9</span>, <span class="fl">20.6</span>)</span>
+<span id="cb19-3"><a href="simple-linear-regression.html#cb19-3"></a>BFP &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">18.9</span>, <span class="fl">26.0</span>, <span class="fl">22.1</span>, <span class="fl">13.2</span>, <span class="fl">17.3</span>, <span class="fl">22.9</span>, <span class="fl">13.9</span>, <span class="fl">29.2</span>, <span class="fl">35.4</span>, <span class="fl">20.6</span>, </span>
+<span id="cb19-4"><a href="simple-linear-regression.html#cb19-4"></a>         <span class="fl">30.3</span>, <span class="fl">32.1</span>, <span class="fl">27.2</span>, <span class="fl">28.2</span>, <span class="fl">38.2</span>, <span class="fl">31.3</span>, <span class="fl">15.2</span>, <span class="fl">36.7</span>, <span class="fl">24.8</span>, <span class="fl">18.3</span>)</span>
+<span id="cb19-5"><a href="simple-linear-regression.html#cb19-5"></a>DF  &lt;-<span class="st"> </span><span class="kw">data.frame</span>(BMI, BFP)</span></code></pre></div>
 <p>2. Plot your data</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="simple-linear-regression.html#cb2-1"></a><span class="kw">plot</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, <span class="dt">data =</span> DF)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="simple-linear-regression.html#cb20-1"></a><span class="kw">plot</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, <span class="dt">data =</span> DF)</span></code></pre></div>
 <p>3. Fit a simple linear model:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="simple-linear-regression.html#cb3-1"></a>LM &lt;-<span class="st"> </span><span class="kw">lm</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, <span class="dt">data =</span> DF)  </span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="simple-linear-regression.html#cb21-1"></a>LM &lt;-<span class="st"> </span><span class="kw">lm</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, <span class="dt">data =</span> DF)  </span></code></pre></div>
 <p>4. Perform visual diagnostics:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="simple-linear-regression.html#cb4-1"></a><span class="kw">require</span>(<span class="st">&quot;car&quot;</span>)         <span class="co"># Install if missing</span></span>
-<span id="cb4-2"><a href="simple-linear-regression.html#cb4-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))   <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb4-3"><a href="simple-linear-regression.html#cb4-3"></a><span class="kw">plot</span>(LM, <span class="dt">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
-<span id="cb4-4"><a href="simple-linear-regression.html#cb4-4"></a><span class="kw">qqPlot</span>(LM, <span class="dt">reps =</span> <span class="fl">1e4</span>) <span class="co"># use plot(LM, which = 2 in case of errors)</span></span>
-<span id="cb4-5"><a href="simple-linear-regression.html#cb4-5"></a><span class="kw">plot</span>(LM, <span class="dt">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
-<span id="cb4-6"><a href="simple-linear-regression.html#cb4-6"></a><span class="kw">plot</span>(LM, <span class="dt">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
-<span id="cb4-7"><a href="simple-linear-regression.html#cb4-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))   <span class="co"># Restore the default  </span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="simple-linear-regression.html#cb22-1"></a><span class="kw">require</span>(<span class="st">&quot;car&quot;</span>)         <span class="co"># Install if missing</span></span>
+<span id="cb22-2"><a href="simple-linear-regression.html#cb22-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))   <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb22-3"><a href="simple-linear-regression.html#cb22-3"></a><span class="kw">plot</span>(LM, <span class="dt">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
+<span id="cb22-4"><a href="simple-linear-regression.html#cb22-4"></a><span class="kw">qqPlot</span>(LM, <span class="dt">reps =</span> <span class="fl">1e4</span>) <span class="co"># use plot(LM, which = 2 in case of errors)</span></span>
+<span id="cb22-5"><a href="simple-linear-regression.html#cb22-5"></a><span class="kw">plot</span>(LM, <span class="dt">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
+<span id="cb22-6"><a href="simple-linear-regression.html#cb22-6"></a><span class="kw">plot</span>(LM, <span class="dt">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
+<span id="cb22-7"><a href="simple-linear-regression.html#cb22-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))   <span class="co"># Restore the default  </span></span></code></pre></div>
 <p>5. Check the regression table:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="simple-linear-regression.html#cb5-1"></a><span class="kw">summary</span>(LM)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="simple-linear-regression.html#cb23-1"></a><span class="kw">summary</span>(LM)</span></code></pre></div>
 <p>6. Plot your model and write a conclusion about it:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="simple-linear-regression.html#cb6-1"></a><span class="kw">plot</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, <span class="dt">data =</span> DF)</span>
-<span id="cb6-2"><a href="simple-linear-regression.html#cb6-2"></a><span class="kw">lines</span>(<span class="kw">coef</span>(LM))</span>
-<span id="cb6-3"><a href="simple-linear-regression.html#cb6-3"></a><span class="kw">text</span>(<span class="fl">32.5</span>, <span class="fl">12.5</span>, <span class="kw">bquote</span>(R<span class="op">^</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span>.(<span class="kw">round</span>(<span class="kw">summary</span>(LM)<span class="op">$</span>r.squared, <span class="dv">3</span>))))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="simple-linear-regression.html#cb24-1"></a><span class="kw">plot</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, <span class="dt">data =</span> DF)</span>
+<span id="cb24-2"><a href="simple-linear-regression.html#cb24-2"></a><span class="kw">lines</span>(<span class="kw">coef</span>(LM))</span>
+<span id="cb24-3"><a href="simple-linear-regression.html#cb24-3"></a><span class="kw">text</span>(<span class="fl">32.5</span>, <span class="fl">12.5</span>, <span class="kw">bquote</span>(R<span class="op">^</span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span>.(<span class="kw">round</span>(<span class="kw">summary</span>(LM)<span class="op">$</span>r.squared, <span class="dv">3</span>))))</span></code></pre></div>
 <p>7. You could add a prediction interval:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="simple-linear-regression.html#cb7-1"></a><span class="kw">plot</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, DF)                                 </span>
-<span id="cb7-2"><a href="simple-linear-regression.html#cb7-2"></a>x_values  &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">15</span>, <span class="dv">35</span>, <span class="fl">0.1</span>) <span class="co"># 15, 15.1, 15.2, ..., 35</span></span>
-<span id="cb7-3"><a href="simple-linear-regression.html#cb7-3"></a>newdata   &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">BMI =</span> x_values)</span>
-<span id="cb7-4"><a href="simple-linear-regression.html#cb7-4"></a>y_predict &lt;-<span class="st"> </span><span class="kw">predict</span>(LM, newdata, <span class="dt">interval =</span> <span class="st">&quot;predict&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</span>
-<span id="cb7-5"><a href="simple-linear-regression.html#cb7-5"></a><span class="kw">lines</span>(y_predict[, <span class="dv">1</span>] <span class="op">~</span><span class="st"> </span>x_values)          <span class="co"># Regression line</span></span>
-<span id="cb7-6"><a href="simple-linear-regression.html#cb7-6"></a><span class="kw">lines</span>(y_predict[, <span class="dv">2</span>] <span class="op">~</span><span class="st"> </span>x_values, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="co"># Lower bound</span></span>
-<span id="cb7-7"><a href="simple-linear-regression.html#cb7-7"></a><span class="kw">lines</span>(y_predict[, <span class="dv">3</span>] <span class="op">~</span><span class="st"> </span>x_values, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="co"># Upper bound</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="simple-linear-regression.html#cb25-1"></a><span class="kw">plot</span>(BFP <span class="op">~</span><span class="st"> </span>BMI, DF)                                 </span>
+<span id="cb25-2"><a href="simple-linear-regression.html#cb25-2"></a>x_values  &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">15</span>, <span class="dv">35</span>, <span class="fl">0.1</span>) <span class="co"># 15, 15.1, 15.2, ..., 35</span></span>
+<span id="cb25-3"><a href="simple-linear-regression.html#cb25-3"></a>newdata   &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">BMI =</span> x_values)</span>
+<span id="cb25-4"><a href="simple-linear-regression.html#cb25-4"></a>y_predict &lt;-<span class="st"> </span><span class="kw">predict</span>(LM, newdata, <span class="dt">interval =</span> <span class="st">&quot;predict&quot;</span>, <span class="dt">level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb25-5"><a href="simple-linear-regression.html#cb25-5"></a><span class="kw">lines</span>(y_predict[, <span class="dv">1</span>] <span class="op">~</span><span class="st"> </span>x_values)          <span class="co"># Regression line</span></span>
+<span id="cb25-6"><a href="simple-linear-regression.html#cb25-6"></a><span class="kw">lines</span>(y_predict[, <span class="dv">2</span>] <span class="op">~</span><span class="st"> </span>x_values, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="co"># Lower bound</span></span>
+<span id="cb25-7"><a href="simple-linear-regression.html#cb25-7"></a><span class="kw">lines</span>(y_predict[, <span class="dv">3</span>] <span class="op">~</span><span class="st"> </span>x_values, <span class="dt">lty =</span> <span class="dv">2</span>) <span class="co"># Upper bound</span></span></code></pre></div>
 </div>
 <div id="exercises-8" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Exercises</h3>
@@ -301,10 +305,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </iframe>
 <div id="exercises-9" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Exercises</h3>
-<p>Refer to Brightspace.</p>
+<p>Below is a famous standard data set in R on the distance until a car has stopped completely from the moment it starts braking.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> Its variables are:</p>
+<ul>
+<li><code>dist</code>: numeric stopping distance (ft)</li>
+<li><code>speed</code>: numeric speed (mph)</li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="simple-linear-regression.html#cb26-1"></a><span class="kw">data</span>(cars)</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>Fit a simple linear model and perform visual diagnostics. Is this an appropriate model? Why?</p></li>
+<li><p>Fit the following model with a square-root transformation of the outcome and compare the diagnostic plots. Which do you think is better and why?</p></li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="simple-linear-regression.html#cb27-1"></a>LM2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">sqrt</span>(dist) <span class="op">~</span><span class="st"> </span>speed, cars)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Complete the analysis using <a href="simple-linear-regression.html#LMsummary">the example analysis</a>. Report a conclusion.</li>
+</ol>
 
 </div>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p><small>Ezekiel, M. (1930) <em>Methods of Correlation Analysis.</em> Wiley.</small><a href="simple-linear-regression.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
