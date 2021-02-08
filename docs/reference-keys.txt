@@ -45,6 +45,7 @@ simple-linear-regression
 overview-1
 LMsummary
 exercises-8
+step-by-step-walkthrough
 model-diagnostics
 exercises-9
 multiple-linear-regression

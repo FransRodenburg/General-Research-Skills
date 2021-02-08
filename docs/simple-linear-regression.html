@@ -206,8 +206,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#LMsummary"><i class="fa fa-check"></i><b>7.1.1</b> Summary of the example in the video</a></li>
 <li class="chapter" data-level="7.1.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-8"><i class="fa fa-check"></i><b>7.1.2</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.2</b> Model Diagnostics</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-9"><i class="fa fa-check"></i><b>7.2.1</b> Exercises</a></li>
+<li class="chapter" data-level="7.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#step-by-step-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Step-by-Step Walkthrough</a></li>
+<li class="chapter" data-level="7.3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.3</b> Model Diagnostics</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-9"><i class="fa fa-check"></i><b>7.3.1</b> Exercises</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="multiple-linear-regression.html"><a href="multiple-linear-regression.html"><i class="fa fa-check"></i><b>8</b> Multiple Linear Regression</a><ul>
@@ -299,23 +300,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Refer to Brightspace.</p>
 </div>
 </div>
+<div id="step-by-step-walkthrough" class="section level2">
+<h2><span class="header-section-number">7.2</span> Step-by-Step Walkthrough</h2>
+<p>Here is a comprehensive tutorial by Dr. H.G.J. van Mil, using simulated data:</p>
+<iframe src="https://www.youtube.com/embed/snkRU7GNDsc" width="672" height="400px">
+</iframe>
+<p>You can watch the video while trying to reproduce the steps. You can change some of the simulation input if you like:</p>
+<p><b>Simulation code</b>:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="simple-linear-regression.html#cb26-1"></a><span class="kw">set.seed</span>(<span class="dv">635</span>)</span>
+<span id="cb26-2"><a href="simple-linear-regression.html#cb26-2"></a>n         &lt;-<span class="st"> </span><span class="dv">20</span></span>
+<span id="cb26-3"><a href="simple-linear-regression.html#cb26-3"></a>Intercept &lt;-<span class="st"> </span><span class="dv">220</span></span>
+<span id="cb26-4"><a href="simple-linear-regression.html#cb26-4"></a>Slope     &lt;-<span class="st"> </span><span class="fl">3.5</span></span>
+<span id="cb26-5"><a href="simple-linear-regression.html#cb26-5"></a>Phosphate &lt;-<span class="st"> </span><span class="kw">runif</span>(n, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb26-6"><a href="simple-linear-regression.html#cb26-6"></a>Residuals &lt;-<span class="st"> </span><span class="kw">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">3</span>)</span>
+<span id="cb26-7"><a href="simple-linear-regression.html#cb26-7"></a>Biomass   &lt;-<span class="st"> </span>Intercept <span class="op">+</span><span class="st"> </span>Slope <span class="op">*</span><span class="st"> </span>Phosphate <span class="op">+</span><span class="st"> </span>Residuals</span>
+<span id="cb26-8"><a href="simple-linear-regression.html#cb26-8"></a>SimDat    &lt;-<span class="st"> </span><span class="kw">data.frame</span>(Biomass, Phosphate)</span></code></pre></div>
+<p>From there on you will have an object in your workspace called <code>SimDat</code> that contains the simulated data set. You can use it to follow the steps shown in Harald’s video.</p>
+</div>
 <div id="model-diagnostics" class="section level2">
-<h2><span class="header-section-number">7.2</span> Model Diagnostics</h2>
+<h2><span class="header-section-number">7.3</span> Model Diagnostics</h2>
 <iframe src="https://www.youtube.com/embed/upJJmfSbBuQ" width="672" height="400px">
 </iframe>
 <div id="exercises-9" class="section level3">
-<h3><span class="header-section-number">7.2.1</span> Exercises</h3>
+<h3><span class="header-section-number">7.3.1</span> Exercises</h3>
 <p>Below is a famous standard data set in R on the distance until a car has stopped completely from the moment it starts braking.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> Its variables are:</p>
 <ul>
 <li><code>dist</code>: numeric stopping distance (ft)</li>
 <li><code>speed</code>: numeric speed (mph)</li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="simple-linear-regression.html#cb26-1"></a><span class="kw">data</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="simple-linear-regression.html#cb27-1"></a><span class="kw">data</span>(cars)</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Fit a simple linear model and perform visual diagnostics. Is this an appropriate model? Why?</p></li>
 <li><p>Fit the following model with a square-root transformation of the outcome and compare the diagnostic plots. Which do you think is better and why?</p></li>
 </ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="simple-linear-regression.html#cb27-1"></a>LM2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">sqrt</span>(dist) <span class="op">~</span><span class="st"> </span>speed, cars)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="simple-linear-regression.html#cb28-1"></a>LM2 &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">sqrt</span>(dist) <span class="op">~</span><span class="st"> </span>speed, cars)</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Complete the analysis using <a href="simple-linear-regression.html#LMsummary">the example analysis</a>. Report a conclusion.</li>
 </ol>
