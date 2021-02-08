@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 PCA | General Research Skills</title>
-  <meta name="description" content="Chapter 11 PCA | General Research Skills" />
+  <title>Chapter 11 Model specification and model diagnostics. | General Research Skills</title>
+  <meta name="description" content="Chapter 11 Model specification and model diagnostics. | General Research Skills" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 PCA | General Research Skills" />
+  <meta property="og:title" content="Chapter 11 Model specification and model diagnostics. | General Research Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 PCA | General Research Skills" />
+  <meta name="twitter:title" content="Chapter 11 Model specification and model diagnostics. | General Research Skills" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="glm.html"/>
-<link rel="next" href="overview-of-techniques.html"/>
+<link rel="prev" href="introducing-three-factorial-anova-dataset-.html"/>
+<link rel="next" href="model-selection.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,76 +50,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -197,9 +129,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="anova.html"><a href="anova.html#two-way-multi-way-interaction"><i class="fa fa-check"></i><b>6.3</b> Two-Way, Multi-Way &amp; Interaction</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="anova.html"><a href="anova.html#exercises-7"><i class="fa fa-check"></i><b>6.3.1</b> Exercises</a></li>
-<li class="chapter" data-level="6.3.2" data-path="anova.html"><a href="anova.html#additional-exercises"><i class="fa fa-check"></i><b>6.3.2</b> Additional Exercises (*)</a></li>
+<li><a href="anova.html#additional-exercises-where-is-part-4"><span class="toc-section-number">6.3.2</span> Additional Exercises (<em>)
+## Where is part 4? (</em>)</a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="anova.html"><a href="anova.html#where-is-part-4"><i class="fa fa-check"></i><b>6.4</b> Where is part 4? (*)</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>7</b> Simple Linear Regression</a><ul>
 <li class="chapter" data-level="7.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#overview-1"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
@@ -211,33 +143,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-9"><i class="fa fa-check"></i><b>7.3.1</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a><ul>
-<li class="chapter" data-level="8.1" data-path="factorial-anova.html"><a href="factorial-anova.html#interaction."><i class="fa fa-check"></i><b>8.1</b> Interaction.</a></li>
-<li class="chapter" data-level="8.2" data-path="factorial-anova.html"><a href="factorial-anova.html#introducing-three-factorial-anova-dataset"><i class="fa fa-check"></i><b>8.2</b> Introducing three factorial ANOVA dataset</a></li>
-<li class="chapter" data-level="8.3" data-path="factorial-anova.html"><a href="factorial-anova.html#model-specification-and-model-diagnostics."><i class="fa fa-check"></i><b>8.3</b> Model specification and model diagnostics.</a></li>
-<li class="chapter" data-level="8.4" data-path="factorial-anova.html"><a href="factorial-anova.html#model-selection"><i class="fa fa-check"></i><b>8.4</b> Model selection</a></li>
-<li class="chapter" data-level="8.5" data-path="factorial-anova.html"><a href="factorial-anova.html#some-final-thoughts-and-visualisation."><i class="fa fa-check"></i><b>8.5</b> Some final thoughts and visualisation.</a></li>
+<li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a></li>
+<li class="chapter" data-level="9" data-path="interaction-.html"><a href="interaction-.html"><i class="fa fa-check"></i><b>9</b> Interaction.</a></li>
+<li class="chapter" data-level="10" data-path="introducing-three-factorial-anova-dataset-.html"><a href="introducing-three-factorial-anova-dataset-.html"><i class="fa fa-check"></i><b>10</b> Introducing three factorial ANOVA dataset.</a></li>
+<li class="chapter" data-level="11" data-path="model-specification-and-model-diagnostics-.html"><a href="model-specification-and-model-diagnostics-.html"><i class="fa fa-check"></i><b>11</b> Model specification and model diagnostics.</a></li>
+<li class="chapter" data-level="12" data-path="model-selection.html"><a href="model-selection.html"><i class="fa fa-check"></i><b>12</b> Model selection</a></li>
+<li class="chapter" data-level="13" data-path="some-final-thoughts-and-visualisation-.html"><a href="some-final-thoughts-and-visualisation-.html"><i class="fa fa-check"></i><b>13</b> Some final thoughts and visualisation.</a></li>
+<li class="chapter" data-level="14" data-path="model-selection-1.html"><a href="model-selection-1.html"><i class="fa fa-check"></i><b>14</b> Model Selection</a><ul>
+<li class="chapter" data-level="14.1" data-path="model-selection-1.html"><a href="model-selection-1.html#lecture-model-selection"><i class="fa fa-check"></i><b>14.1</b> Lecture: Model Selection</a></li>
+<li class="chapter" data-level="14.2" data-path="model-selection-1.html"><a href="model-selection-1.html#exercises-10"><i class="fa fa-check"></i><b>14.2</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html"><i class="fa fa-check"></i><b>9</b> ANCOVA &amp; Model Sections</a><ul>
-<li class="chapter" data-level="9.1" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#introduction."><i class="fa fa-check"></i><b>9.1</b> Introduction.</a></li>
-<li class="chapter" data-level="9.2" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#the-ancova-explained-by-simulations."><i class="fa fa-check"></i><b>9.2</b> The ANCOVA explained by simulations.</a></li>
-<li class="chapter" data-level="9.3" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#the-analysis-of-ancova-data-step-by-step."><i class="fa fa-check"></i><b>9.3</b> The analysis of ANCOVA data step by step.</a></li>
-<li class="chapter" data-level="9.4" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#some-questions"><i class="fa fa-check"></i><b>9.4</b> Some questions</a></li>
-<li class="chapter" data-level="9.5" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#lecture-model-selection"><i class="fa fa-check"></i><b>9.5</b> Lecture: Model Selection</a><ul>
-<li class="chapter" data-level="9.5.1" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#exercises-10"><i class="fa fa-check"></i><b>9.5.1</b> Exercises</a></li>
+<li class="chapter" data-level="15" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>15</b> GLM</a><ul>
+<li class="chapter" data-level="15.1" data-path="glm.html"><a href="glm.html#lecture-glm"><i class="fa fa-check"></i><b>15.1</b> Lecture: GLM</a></li>
+<li class="chapter" data-level="15.2" data-path="glm.html"><a href="glm.html#exercises-11"><i class="fa fa-check"></i><b>15.2</b> Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>16</b> PCA</a><ul>
+<li class="chapter" data-level="16.1" data-path="pca.html"><a href="pca.html#lecture-pca"><i class="fa fa-check"></i><b>16.1</b> Lecture: PCA</a></li>
+<li class="chapter" data-level="16.2" data-path="pca.html"><a href="pca.html#exercises-12"><i class="fa fa-check"></i><b>16.2</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a><ul>
-<li class="chapter" data-level="10.1" data-path="glm.html"><a href="glm.html#lecture-glm"><i class="fa fa-check"></i><b>10.1</b> Lecture: GLM</a></li>
-<li class="chapter" data-level="10.2" data-path="glm.html"><a href="glm.html#exercises-11"><i class="fa fa-check"></i><b>10.2</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a><ul>
-<li class="chapter" data-level="11.1" data-path="pca.html"><a href="pca.html#lecture-pca"><i class="fa fa-check"></i><b>11.1</b> Lecture: PCA</a></li>
-<li class="chapter" data-level="11.2" data-path="pca.html"><a href="pca.html#exercises-12"><i class="fa fa-check"></i><b>11.2</b> Exercises</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a><ul>
-<li class="chapter" data-level="12.1" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#lecture-overview"><i class="fa fa-check"></i><b>12.1</b> Lecture: Overview</a></li>
-<li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-13"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
+<li class="chapter" data-level="17" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>17</b> Overview of Techniques</a><ul>
+<li class="chapter" data-level="17.1" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#lecture-overview"><i class="fa fa-check"></i><b>17.1</b> Lecture: Overview</a></li>
+<li class="chapter" data-level="17.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-13"><i class="fa fa-check"></i><b>17.2</b> Exercises</a></li>
 </ul></li>
 </ul>
 
@@ -256,25 +182,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pca" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> PCA</h1>
-<p><small><i>An <b>exploratory technique</b> for explaining the variance among a group of continuous variables, by creating linear combinations.</i></small></p>
-<hr />
-<div id="lecture-pca" class="section level2">
-<h2><span class="header-section-number">11.1</span> Lecture: PCA</h2>
-</div>
-<div id="exercises-12" class="section level2">
-<h2><span class="header-section-number">11.2</span> Exercises</h2>
-
-</div>
+<div id="model-specification-and-model-diagnostics." class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Model specification and model diagnostics.</h1>
+<p>In this screencast the model specification for the three dataset are discussed together with the model diagnostics. It is shown that it follows the same steps as the One-Way ANOVA discussed in chapter 6, because we only need to analyze the behavior of the residuals of the different models, a property shared by all statistical models.</p>
+<iframe src="https://www.youtube.com/embed/MVuyHpHjFwI" width="672" height="400px">
+</iframe>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="glm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-techniques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introducing-three-factorial-anova-dataset-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="model-selection.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

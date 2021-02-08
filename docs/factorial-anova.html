@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 PCA | General Research Skills</title>
-  <meta name="description" content="Chapter 11 PCA | General Research Skills" />
+  <title>Chapter 8 Factorial ANOVA | General Research Skills</title>
+  <meta name="description" content="Chapter 8 Factorial ANOVA | General Research Skills" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 PCA | General Research Skills" />
+  <meta property="og:title" content="Chapter 8 Factorial ANOVA | General Research Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 PCA | General Research Skills" />
+  <meta name="twitter:title" content="Chapter 8 Factorial ANOVA | General Research Skills" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="glm.html"/>
-<link rel="next" href="overview-of-techniques.html"/>
+<link rel="prev" href="simple-linear-regression.html"/>
+<link rel="next" href="ancova-model-sections.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -256,15 +256,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pca" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> PCA</h1>
-<p><small><i>An <b>exploratory technique</b> for explaining the variance among a group of continuous variables, by creating linear combinations.</i></small></p>
+<div id="factorial-anova" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Factorial ANOVA</h1>
+<p><i><small>A model for comparing all <b>combinations of categorical variables</b>.</i></small></p>
 <hr />
-<div id="lecture-pca" class="section level2">
-<h2><span class="header-section-number">11.1</span> Lecture: PCA</h2>
+<p>In these set of lectures we move from models with one explanatory variable, one-way ANOVA and simple linear regression (Y ~ F and Y ~ X ), to multiple regression models (e.g. Y ~F1 + F2 + F1:F2 or Y ~F + X + F:X) with more than one explanatory variables; with F a factor and X a numerical variable. This will introduce two new aspects to our analysis,</p>
+<ul>
+<li>Interaction between the explanatory variables: The effect of explanatory variable A on the response variable depends on the values of the second explanatory variable and visa versa; e.g. a treatment might have different effect in different species.</li>
+<li>More models can be fitted on the data and we need to select the model that fits that data best; e.g. the follow option are possible:
+<ul>
+<li>Y ~F1 + F2 + F1:F2 + residuals</li>
+<li>Y ~F1 + F2 + residuals</li>
+<li>Y ~F1 + residuals</li>
+<li>Y ~ F2 + residuals</li>
+<li>Y ~ residuals</li>
+</ul></li>
+</ul>
+<p>In the first screencast I will explain the concepts of interaction and the difference between factorial ANOVA and ANCOVA. The next screencast explains why model selection is in order by analyzing Factorial ANOVA on three different dataset,</p>
+<ul>
+<li>One dataset representing the null hypothesis,</li>
+<li>One dataset representing data with interaction,</li>
+<li>and finally and dataset representing data with interaction.</li>
+</ul>
+<p>In doing so we can investigate the different criteria for selecting the “best”-model.</p>
+<div id="interaction." class="section level2">
+<h2><span class="header-section-number">8.1</span> Interaction.</h2>
+<p>In this screencast I argue why we might need additional degrees of freedom to analysis data with interactions between the explanatory variables. For example, F1:F2 compound variable in Y ~ F1 + F2 + F1:F2 can be read as that F1 modulates the effect of F2 on Y (or equivalently, the effect F2 has on how the F1 affects Y). In order to fit data with interaction, we need more degrees of freedom.</p>
+<iframe src="https://www.youtube.com/embed/jLbK98Tfs_w" width="672" height="400px">
+</iframe>
 </div>
-<div id="exercises-12" class="section level2">
-<h2><span class="header-section-number">11.2</span> Exercises</h2>
+<div id="introducing-three-factorial-anova-dataset" class="section level2">
+<h2><span class="header-section-number">8.2</span> Introducing three factorial ANOVA dataset</h2>
+<p>In this screencast I introduce three dataset to explain the different qualities of factorial ANOVA model:</p>
+<ul>
+<li>One dataset results in a so-called <strong>Null - model</strong>, a model where all treatment combination do not effect the response variable <span class="math inline">\(H_0\)</span>).</li>
+<li>One dataset that belongs to a Factorial ANOVA model <strong>without</strong> interaction between the two explanatory factors F1 and F2.</li>
+<li>One dataset that belongs to a Factorial ANOVA model <strong>with</strong> interaction between the two explanatory factors. here we need the most complex model also known as the <strong>maximal model</strong>, to fit the data correctly.</li>
+</ul>
+<p>It is shown that the maximal model with interaction need more degrees of freedom (is more complex), than the model without interaction and that the model without interaction needs more degrees of freedom than the Null-model</p>
+<iframe src="https://www.youtube.com/embed/xXZW25SlnhY" width="672" height="400px">
+</iframe>
+</div>
+<div id="model-specification-and-model-diagnostics." class="section level2">
+<h2><span class="header-section-number">8.3</span> Model specification and model diagnostics.</h2>
+<p>In this screencast the model specification for the three dataset are discussed together with the model diagnostics. It is shown that it follows the same steps as the One-Way ANOVA discussed in chapter 6, because we only need to analyze the behavior of the residuals of the different models, a property shared by all statistical models.</p>
+<iframe src="https://www.youtube.com/embed/MVuyHpHjFwI" width="672" height="400px">
+</iframe>
+</div>
+<div id="model-selection" class="section level2">
+<h2><span class="header-section-number">8.4</span> Model selection</h2>
+<p>After it was shown in the previous screencast that the data abide to the assumptions of the model, the search for the best model for each individual dataset can start. The model selection procedures results in three different models for the three different datasets.</p>
+<iframe src="https://www.youtube.com/embed/A0zkpkYdLf8" width="672" height="400px">
+</iframe>
+<p>In one of the screencast of Wednesday we will go into more details of model selection.</p>
+</div>
+<div id="some-final-thoughts-and-visualisation." class="section level2">
+<h2><span class="header-section-number">8.5</span> Some final thoughts and visualisation.</h2>
+<p>Here we will look what the effect can be on the model diagnostics plots when the factorial ANOVA model is miss-specified; e.g. when one term (or degree of freedom) is missing. Also some data visualisations of factorial ANOVA are briefly discussed.</p>
+<iframe src="https://www.youtube.com/embed/oVL18FPFBo8" width="672" height="400px">
+</iframe>
 
 </div>
 </div>
@@ -273,8 +323,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="glm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-techniques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="simple-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ancova-model-sections.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

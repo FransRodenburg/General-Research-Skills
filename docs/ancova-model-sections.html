@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 PCA | General Research Skills</title>
-  <meta name="description" content="Chapter 11 PCA | General Research Skills" />
+  <title>Chapter 9 ANCOVA &amp; Model Sections | General Research Skills</title>
+  <meta name="description" content="Chapter 9 ANCOVA &amp; Model Sections | General Research Skills" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 PCA | General Research Skills" />
+  <meta property="og:title" content="Chapter 9 ANCOVA &amp; Model Sections | General Research Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 PCA | General Research Skills" />
+  <meta name="twitter:title" content="Chapter 9 ANCOVA &amp; Model Sections | General Research Skills" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="glm.html"/>
-<link rel="next" href="overview-of-techniques.html"/>
+<link rel="prev" href="factorial-anova.html"/>
+<link rel="next" href="glm.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -256,16 +256,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pca" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> PCA</h1>
-<p><small><i>An <b>exploratory technique</b> for explaining the variance among a group of continuous variables, by creating linear combinations.</i></small></p>
+<div id="ancova-model-sections" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> ANCOVA &amp; Model Sections</h1>
+<p><small><b><i>Guidelines for choosing the right model.</b> The best model depends on what the model is intended to be used for.</i></small></p>
 <hr />
-<div id="lecture-pca" class="section level2">
-<h2><span class="header-section-number">11.1</span> Lecture: PCA</h2>
+<div id="introduction." class="section level2">
+<h2><span class="header-section-number">9.1</span> Introduction.</h2>
+<p>We now turn our attention to to the case where we have at least one numerical and at least one factor as explanatory variable. These type of models we call ANCOVA or ANalysis of COVAriance and a minimal example is the model Y ~F + X + F:X with F a factor and X a numerical variable.</p>
+<p>Most of the ground work have been covered in the screencast’s on One_way ANOVA, Linear regression and Factorial ANOVA. Therefore these set of screencast on ANCOVA are more applied following the same steps as the factorial ANOVA and the differences are emphasized where needed. Identify therefore the similarities and differences between these multiple regression models.</p>
+<p>The first screencast discusses the difference between the interpretation of an ANCOVA model as compared to an factorial ANOVA model. The second screencast runs trough the analysis of the of an ANCOVA step by step.</p>
 </div>
-<div id="exercises-12" class="section level2">
-<h2><span class="header-section-number">11.2</span> Exercises</h2>
+<div id="the-ancova-explained-by-simulations." class="section level2">
+<h2><span class="header-section-number">9.2</span> The ANCOVA explained by simulations.</h2>
+<p>Simulations are used to explain the challenges faced when analyzing ANCOVA; when are interaction’s significant in the ANCOVA context and what does this mean. First we simulate the same model without interaction multiple times using different set.seed() values to the investigate the uncertainty in the estimates of the slopes. Then we simulate a model with interaction.</p>
+<iframe src="https://www.youtube.com/embed/EczzyMGFgGM" width="672" height="400px">
+</iframe>
+</div>
+<div id="the-analysis-of-ancova-data-step-by-step." class="section level2">
+<h2><span class="header-section-number">9.3</span> The analysis of ANCOVA data step by step.</h2>
+<p>A ANCOVA analysis is performed step by step follow the tutorial for ANCOVA. In this screencast the differences with a factorial ANOVA are emphasized.</p>
+<iframe src="https://www.youtube.com/embed/mRoRvT6EK90" width="672" height="400px">
+</iframe>
+</div>
+<div id="some-questions" class="section level2">
+<h2><span class="header-section-number">9.4</span> Some questions</h2>
+<p>Below part of the output of a ANOCA analysis.</p>
+<pre><code>Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.8528 -0.3010  0.0563  0.2708  0.8555 
 
+Coefficients:
+                               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                     5.09856   0.36516  13.963 4.25e-11 ***
+TreatB                             1?     0.51641  -1.405  0.17712    
+TreatD                         -1.30794       2?    -2.533  0.02084 *  
+Concentration                   0.06073    0.08729   0.696  0.49547    
+TreatmentB:Concentration        0.43544    0.12345     ?3  0.00241 ** 
+TreatmentControl:Concentration  0.24936    0.12345   2.020  0.05852 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5657 on 18 degrees of freedom
+Multiple R-squared:  0.7831,    Adjusted R-squared:  0.7229 
+F-statistic:    13 on 5 and 18 DF,  p-value: 1.892e-05</code></pre>
+<ol style="list-style-type: decimal">
+<li>Calculate the missing numbers ?1, ?2 and ?3.</li>
+<li>How much of the variance is explained by this model?</li>
+<li>How many replications were done of within this experiment?</li>
+<li>What is the estimate for the absolute value of the intercept of TreatD?</li>
+</ol>
+</div>
+<div id="lecture-model-selection" class="section level2">
+<h2><span class="header-section-number">9.5</span> Lecture: Model Selection</h2>
+<iframe src="https://www.youtube.com/embed/n2kWXqR5nnw" width="672" height="400px">
+</iframe>
+<div id="exercises-10" class="section level3">
+<h3><span class="header-section-number">9.5.1</span> Exercises</h3>
+<p>In order to study the effect of caviar on health, a survey is distributed in a city on whether the respondents have ever eaten caviar, and if so, how frequently they eat caviar. After receiving the responses, 100 random individuals from each of the following groups are invited for a health check-up:</p>
+<ul>
+<li>Group A: Has never consumed caviar;</li>
+<li>Group B: Has tried caviar once, or a few times in their life;</li>
+<li>Group C: Eats caviar about once per year;</li>
+<li>Group D: Eats caviar multiple times per year;</li>
+<li>Group E: Eats caviar about once per month.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>What problems do you think there might be with this study design?</li>
+</ol>
+
+</div>
 </div>
 </div>
             </section>
@@ -273,8 +332,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="glm.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="overview-of-techniques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="factorial-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
