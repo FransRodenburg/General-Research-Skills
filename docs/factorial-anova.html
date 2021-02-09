@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="simple-linear-regression.html"/>
-<link rel="next" href="ancova-model-sections.html"/>
+<link rel="next" href="ancova-model-selection.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -213,18 +213,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a><ul>
 <li class="chapter" data-level="8.1" data-path="factorial-anova.html"><a href="factorial-anova.html#interaction"><i class="fa fa-check"></i><b>8.1</b> Interaction</a></li>
-<li class="chapter" data-level="8.2" data-path="factorial-anova.html"><a href="factorial-anova.html#introducing-three-factorial-anova-dataset"><i class="fa fa-check"></i><b>8.2</b> Introducing three factorial ANOVA dataset</a></li>
-<li class="chapter" data-level="8.3" data-path="factorial-anova.html"><a href="factorial-anova.html#model-specification-and-model-diagnostics"><i class="fa fa-check"></i><b>8.3</b> Model specification and model diagnostics</a></li>
+<li class="chapter" data-level="8.2" data-path="factorial-anova.html"><a href="factorial-anova.html#three-example-factorial-anova-data-sets"><i class="fa fa-check"></i><b>8.2</b> Three example factorial ANOVA data sets</a></li>
+<li class="chapter" data-level="8.3" data-path="factorial-anova.html"><a href="factorial-anova.html#model-specification-and-diagnostics"><i class="fa fa-check"></i><b>8.3</b> Model specification and diagnostics</a></li>
 <li class="chapter" data-level="8.4" data-path="factorial-anova.html"><a href="factorial-anova.html#model-selection"><i class="fa fa-check"></i><b>8.4</b> Model selection</a></li>
 <li class="chapter" data-level="8.5" data-path="factorial-anova.html"><a href="factorial-anova.html#some-final-thoughts-and-visualisation"><i class="fa fa-check"></i><b>8.5</b> Some final thoughts and visualisation</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html"><i class="fa fa-check"></i><b>9</b> ANCOVA &amp; Model Sections</a><ul>
-<li class="chapter" data-level="9.1" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
-<li class="chapter" data-level="9.2" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#the-ancova-explained-by-simulations"><i class="fa fa-check"></i><b>9.2</b> The ANCOVA explained by simulations</a></li>
-<li class="chapter" data-level="9.3" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#the-analysis-of-ancova-data-step-by-step."><i class="fa fa-check"></i><b>9.3</b> The analysis of ANCOVA data step by step.</a></li>
-<li class="chapter" data-level="9.4" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#some-questions"><i class="fa fa-check"></i><b>9.4</b> Some questions</a></li>
-<li class="chapter" data-level="9.5" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#lecture-model-selection"><i class="fa fa-check"></i><b>9.5</b> Lecture: Model Selection</a><ul>
-<li class="chapter" data-level="9.5.1" data-path="ancova-model-sections.html"><a href="ancova-model-sections.html#exercises-10"><i class="fa fa-check"></i><b>9.5.1</b> Exercises</a></li>
+<li class="chapter" data-level="9" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html"><i class="fa fa-check"></i><b>9</b> ANCOVA &amp; Model Selection</a><ul>
+<li class="chapter" data-level="9.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-ancova-explained-by-simulations"><i class="fa fa-check"></i><b>9.2</b> The ANCOVA explained by simulations</a></li>
+<li class="chapter" data-level="9.3" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-analysis-of-ancova-data-step-by-step"><i class="fa fa-check"></i><b>9.3</b> The analysis of ANCOVA data step by step</a></li>
+<li class="chapter" data-level="9.4" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#some-questions"><i class="fa fa-check"></i><b>9.4</b> Some questions</a></li>
+<li class="chapter" data-level="9.5" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#model-selection-1"><i class="fa fa-check"></i><b>9.5</b> Model Selection</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#exercises-10"><i class="fa fa-check"></i><b>9.5.1</b> Exercises</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a><ul>
@@ -260,59 +260,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 8</span> Factorial ANOVA</h1>
 <p><i><small>A model for comparing all <b>combinations of categorical variables</b>.</i></small></p>
 <hr />
-<p>In these set of lectures we move from models with one explanatory variable, one-way ANOVA and simple linear regression (Y ~ F and Y ~ X ), to multiple regression models (e.g. Y ~F1 + F2 + F1:F2 or Y ~F + X + F:X) with more than one explanatory variables; with F a factor and X a numerical variable. This will introduce two new aspects to our analysis,</p>
+<p>In these set of lectures we move from models with one explanatory variable, one-way ANOVA and simple linear regression (<code>Y ~ F</code> and <code>Y ~ X</code>), to multiple regression models (e.g. <code>Y ~ F1 + F2 + F1:F2</code> or <code>Y ~ F + X + F:X</code>) with more than one explanatory variable; with <code>F</code> a factor and <code>X</code> a numerical variable. This will introduce two new aspects to our analysis:</p>
 <ul>
-<li>Interaction between the explanatory variables: The effect of explanatory variable A on the response variable depends on the values of the second explanatory variable and visa versa; e.g. a treatment might have different effect in different species.</li>
+<li>Interaction between the explanatory variables: The effect of one explanatory variable on the response variable depends on the values of the second explanatory variable and vice versa; e.g. a treatment might have different effect in different species.</li>
 <li>More models can be fitted on the data and we need to select the model that fits that data best; e.g. the follow option are possible:
 <ul>
-<li>Y ~F1 + F2 + F1:F2 + residuals</li>
-<li>Y ~F1 + F2 + residuals</li>
-<li>Y ~F1 + residuals</li>
-<li>Y ~ F2 + residuals</li>
-<li>Y ~ residuals</li>
+<li><code>Y ~ F1 + F2 + F1:F2 + residuals</code></li>
+<li><code>Y ~ F1 + F2  + residuals</code></li>
+<li><code>Y ~ F1 + residuals</code></li>
+<li><code>Y ~ F2 + residuals</code></li>
+<li><code>Y ~ residuals</code></li>
 </ul></li>
 </ul>
-<p>In the first screencast I will explain the concepts of interaction and the difference between factorial ANOVA and ANCOVA. The next screencast explains why model selection is in order by analyzing Factorial ANOVA on three different dataset,</p>
+<p>In the first screencast I will explain the concepts of interaction and the difference between factorial ANOVA and ANCOVA. The next screencast explains why model selection is in order by analyzing factorial ANOVA on three different data set,</p>
 <ul>
-<li>One dataset representing the null hypothesis,</li>
-<li>One dataset representing data with interaction,</li>
-<li>and finally and dataset representing data with interaction.</li>
+<li>One data set representing the null hypothesis,</li>
+<li>One data set representing data with interaction,</li>
+<li>and finally and data set representing data with interaction.</li>
 </ul>
-<p>In doing so we can investigate the different criteria for selecting the “best”-model.</p>
+<p>In doing so we can investigate the different criteria for selecting the “best” model.</p>
 <div id="interaction" class="section level2">
 <h2><span class="header-section-number">8.1</span> Interaction</h2>
-<p>In this screencast I argue why we might need additional degrees of freedom to analysis data with interactions between the explanatory variables. For example, F1:F2 compound variable in Y ~ F1 + F2 + F1:F2 can be read as that F1 modulates the effect of F2 on Y (or equivalently, the effect F2 has on how the F1 affects Y). In order to fit data with interaction, we need more degrees of freedom.</p>
+<p>In this screencast I argue why we might need additional degrees of freedom to analysis data with interactions between the explanatory variables. For example, <code>F1:F2</code> compound variable in <code>Y ~ F1 + F2 + F1:F2</code> can be read as that <code>F1</code> modulates the effect of <code>F2</code> on <code>Y</code> (or equivalently, the effect <code>F2</code> has on how the <code>F1</code> affects <code>Y</code>). In order to fit data with interaction, we need more degrees of freedom.</p>
 <iframe src="https://www.youtube.com/embed/jLbK98Tfs_w" width="672" height="400px">
 </iframe>
 </div>
-<div id="introducing-three-factorial-anova-dataset" class="section level2">
-<h2><span class="header-section-number">8.2</span> Introducing three factorial ANOVA dataset</h2>
-<p>In this screencast I introduce three dataset to explain the different qualities of factorial ANOVA model:</p>
+<div id="three-example-factorial-anova-data-sets" class="section level2">
+<h2><span class="header-section-number">8.2</span> Three example factorial ANOVA data sets</h2>
+<p>In this screencast I introduce three data sets to explain the different qualities of factorial ANOVA model:</p>
 <ul>
-<li>One dataset results in a so-called <strong>Null - model</strong>, a model where all treatment combination do not effect the response variable <span class="math inline">\(H_0\)</span>).</li>
-<li>One dataset that belongs to a Factorial ANOVA model <strong>without</strong> interaction between the two explanatory factors F1 and F2.</li>
-<li>One dataset that belongs to a Factorial ANOVA model <strong>with</strong> interaction between the two explanatory factors. here we need the most complex model also known as the <strong>maximal model</strong>, to fit the data correctly.</li>
+<li>One data set results in a so-called <strong>null-model</strong>, a model where none of the treatment combinations affect the response variable (<span class="math inline">\(H_0\)</span>).</li>
+<li>One data set that belongs to a factorial ANOVA model <strong>without</strong> interaction between the two explanatory factors <code>F1</code> and <code>F2</code>.</li>
+<li>One data set that belongs to a factorial ANOVA model <strong>with</strong> interaction between the two explanatory factors. here we need the most complex model also known as the <strong>maximal model</strong>, to fit the data correctly.</li>
 </ul>
-<p>It is shown that the maximal model with interaction need more degrees of freedom (is more complex), than the model without interaction and that the model without interaction needs more degrees of freedom than the Null-model</p>
+<p>It is shown that the maximal model with interaction needs more degrees of freedom (is more complex), than the model without interaction, and that the model without interaction needs more degrees of freedom than the null-model</p>
 <iframe src="https://www.youtube.com/embed/xXZW25SlnhY" width="672" height="400px">
 </iframe>
 </div>
-<div id="model-specification-and-model-diagnostics" class="section level2">
-<h2><span class="header-section-number">8.3</span> Model specification and model diagnostics</h2>
-<p>In this screencast the model specification for the three dataset are discussed together with the model diagnostics. It is shown that it follows the same steps as the One-Way ANOVA discussed in chapter 6, because we only need to analyze the behavior of the residuals of the different models, a property shared by all statistical models.</p>
+<div id="model-specification-and-diagnostics" class="section level2">
+<h2><span class="header-section-number">8.3</span> Model specification and diagnostics</h2>
+<p>In this screencast the model specification for the three data set are discussed together with the model diagnostics. It is shown that it follows the same steps as the one-Way ANOVA discussed in chapter 6, because we only need to analyze the behavior of the residuals of the different models, a property shared by all statistical models.</p>
 <iframe src="https://www.youtube.com/embed/MVuyHpHjFwI" width="672" height="400px">
 </iframe>
 </div>
 <div id="model-selection" class="section level2">
 <h2><span class="header-section-number">8.4</span> Model selection</h2>
-<p>After it was shown in the previous screencast that the data abide to the assumptions of the model, the search for the best model for each individual dataset can start. The model selection procedures results in three different models for the three different datasets.</p>
+<p>After it was shown in the previous screencast that the data seem to adhere to the assumptions of the model, the search for the best model for each individual data set can start. The model selection procedures results in three different models for the three different data sets.</p>
 <iframe src="https://www.youtube.com/embed/A0zkpkYdLf8" width="672" height="400px">
 </iframe>
-<p>In one of the screencast of Wednesday we will go into more details of model selection.</p>
+<p>In one of <a href="https://youtu.be/n2kWXqR5nnw">the screencast of Wednesday</a> we will go into more detail of model selection.</p>
 </div>
 <div id="some-final-thoughts-and-visualisation" class="section level2">
 <h2><span class="header-section-number">8.5</span> Some final thoughts and visualisation</h2>
-<p>Here we will look what the effect can be on the model diagnostics plots when the factorial ANOVA model is miss-specified; e.g. when one term (or degree of freedom) is missing. Also some data visualisations of factorial ANOVA are briefly discussed.</p>
+<p>Here we will look what the effect can be on the model diagnostics plots when the factorial ANOVA model is miss-specified; e.g. when one term (or degree of freedom) is missing. Also some data visualizations of factorial ANOVA are briefly discussed.</p>
 <iframe src="https://www.youtube.com/embed/oVL18FPFBo8" width="672" height="400px">
 </iframe>
 
@@ -324,7 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="simple-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ancova-model-sections.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ancova-model-selection.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
