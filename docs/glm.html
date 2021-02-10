@@ -210,6 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.3</b> Model Diagnostics</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-9"><i class="fa fa-check"></i><b>7.3.1</b> Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#transformation"><i class="fa fa-check"></i><b>7.4</b> Transformation</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a><ul>
 <li class="chapter" data-level="8.1" data-path="factorial-anova.html"><a href="factorial-anova.html#interaction"><i class="fa fa-check"></i><b>8.1</b> Interaction</a></li>
@@ -228,16 +229,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a><ul>
-<li class="chapter" data-level="10.1" data-path="glm.html"><a href="glm.html#lecture-glm"><i class="fa fa-check"></i><b>10.1</b> Lecture: GLM</a></li>
-<li class="chapter" data-level="10.2" data-path="glm.html"><a href="glm.html#exercises-11"><i class="fa fa-check"></i><b>10.2</b> Exercises</a></li>
+<li class="chapter" data-level="10.1" data-path="glm.html"><a href="glm.html#introduction-3"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="glm.html"><a href="glm.html#poisson-glm-introduction"><i class="fa fa-check"></i><b>10.2</b> Poisson GLM: Introduction</a></li>
+<li class="chapter" data-level="10.3" data-path="glm.html"><a href="glm.html#poisson-glm-model-specification"><i class="fa fa-check"></i><b>10.3</b> Poisson GLM: Model specification</a></li>
+<li class="chapter" data-level="10.4" data-path="glm.html"><a href="glm.html#poisson-glm-analysis-of-glm-data-and-interpretation"><i class="fa fa-check"></i><b>10.4</b> Poisson GLM: Analysis of GLM data and interpretation</a></li>
+<li class="chapter" data-level="10.5" data-path="glm.html"><a href="glm.html#binomial-glm-motivation-binomial-glm"><i class="fa fa-check"></i><b>10.5</b> Binomial GLM: Motivation Binomial GLM</a></li>
+<li class="chapter" data-level="10.6" data-path="glm.html"><a href="glm.html#binomial-glm-analysing-a-binomial-glm"><i class="fa fa-check"></i><b>10.6</b> Binomial GLM: Analysing a Binomial GLM</a></li>
+<li class="chapter" data-level="10.7" data-path="glm.html"><a href="glm.html#binomial-glm-interpretation-of-the-estimates"><i class="fa fa-check"></i><b>10.7</b> Binomial GLM: Interpretation of the estimates</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a><ul>
 <li class="chapter" data-level="11.1" data-path="pca.html"><a href="pca.html#lecture-pca"><i class="fa fa-check"></i><b>11.1</b> Lecture: PCA</a></li>
-<li class="chapter" data-level="11.2" data-path="pca.html"><a href="pca.html#exercises-12"><i class="fa fa-check"></i><b>11.2</b> Exercises</a></li>
+<li class="chapter" data-level="11.2" data-path="pca.html"><a href="pca.html#exercises-11"><i class="fa fa-check"></i><b>11.2</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a><ul>
 <li class="chapter" data-level="12.1" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#lecture-overview"><i class="fa fa-check"></i><b>12.1</b> Lecture: Overview</a></li>
-<li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-13"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
+<li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-12"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
 </ul></li>
 </ul>
 
@@ -260,11 +266,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 10</span> GLM</h1>
 <p><small><i>A model for a <b>continuous response variable</b> and <b>any number of explanatory variables</b> (continuous and/or categorical). The data-generating process can follow <b>any distribution in the exponential dispersion family</b>.</i></small></p>
 <hr />
-<div id="lecture-glm" class="section level2">
-<h2><span class="header-section-number">10.1</span> Lecture: GLM</h2>
+<div id="introduction-3" class="section level2">
+<h2><span class="header-section-number">10.1</span> Introduction</h2>
+<p>Data do not always abide to the assumptions of our statistical models. This might be due to extreme values in our data, which might be outliers, or due to bad experimentation. But there are also many instances where the deviation from the assumptions are due to more data fundamental properties. We have observed this in the <code>fruitfly</code> and <code>rats</code> data sets. Longevity and survival can be interpreted as the time we need to wait until the fruit flies or rats dies. Most often waiting times are not distributed are a normal distribution but as a so-called Poisson distribution. Counting processes also result in Poisson distributions.</p>
+<p>The same is true if our response variable is not numerical but for instance a factor with two levels; e.g. the present or absence of a particular object, success or failure, dead or alive, sprouting or not, Gene on or off, to name a few. These two valued response data are called binomial data and the related distribution is the binomial distribution.</p>
+<p>Both waiting times, counts and binomial data occur commonly in life science research. In order to accommodate for the analysis of these data, we need to generalized the linear model methodology in such a way that will allow for the statistical analysis of Poisson and binomial data and keeps the ease of interpretation of the linear models. The method that was developed is called the Generalized Linear Model, or GLM.</p>
+<p>Below we will discus two instances of GLMs, one for Poisson and one for Binomial data. Beside a small addition in the coding,the GLM transforms the model rather that the response variable, this will allow us to give a standard interpretation to intercepts and in particular the slopes.</p>
+<p>Elements of these lectures are discussed in chapter 3 of the book <a href="https://github.com/FransRodenburg/Biostatistics-Book-Series/blob/main/Elements_of_Biostatistics_Sep2020.pdf">Elements of Biostatistics</a>.</p>
 </div>
-<div id="exercises-11" class="section level2">
-<h2><span class="header-section-number">10.2</span> Exercises</h2>
+<div id="poisson-glm-introduction" class="section level2">
+<h2><span class="header-section-number">10.2</span> Poisson GLM: Introduction</h2>
+<p>In this first screencast we give the motivation for choosing a GLM approach to Poisson data. I also discus the link between the different distributions. It turns out that the three distributions, Normal, Poisson and Binomial, belong to the same family of distribution, the exponential family. It’s important to note that both the Poisson and binomial distributions have only one free parameter, resp. <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(p\)</span>, whereas the normal distribution has two: <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>.</p>
+<iframe src="https://www.youtube.com/embed/6fH8Ysw3_Nk" width="672" height="400px">
+</iframe>
+<p>Question:</p>
+<ul>
+<li>How are distribution parameters of the normal distribution, <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, related to the parameter of the Poisson distribution <span class="math inline">\(\lambda\)</span> and the parameters of the binomial distribution, <span class="math inline">\(p\)</span> and <span class="math inline">\(n\)</span>?</li>
+</ul>
+</div>
+<div id="poisson-glm-model-specification" class="section level2">
+<h2><span class="header-section-number">10.3</span> Poisson GLM: Model specification</h2>
+<p>Because GLM models can deal with the different distributions from the exponential family, we need to make explicit which family member we need to select, e.g. Poisson for counts and binomial for two level factors. One example for a GLM encoded in R:</p>
+<pre><code>Model &lt;- glm(Counts ~ Treatment + Concentration + treat:Concentration, family = poisson(link = &quot;log&quot;)</code></pre>
+<p>Note that you can identify:</p>
+<ul>
+<li>Linear equation: <code>Counts ~ Treatment + Concentration + treat:Concentration</code></li>
+<li>Exponential family member: <code>poisson</code></li>
+<li>Link function: <code>link = "log"</code></li>
+</ul>
+<p>Further note that we still have a linear model. Therefore we will run through all the steps that we did in the analysis of linear models.</p>
+<iframe src="https://www.youtube.com/embed/sRJLcA2s_Ok" width="672" height="400px">
+</iframe>
+<p>Question:</p>
+<ul>
+<li>Name three link function for the Poisson distribution.</li>
+</ul>
+</div>
+<div id="poisson-glm-analysis-of-glm-data-and-interpretation" class="section level2">
+<h2><span class="header-section-number">10.4</span> Poisson GLM: Analysis of GLM data and interpretation</h2>
+<p>In the GLM we transform the model in order to to get the residuals to behave as a normal distribution again. The assumption of homoscedasticity is essential needed for GLM as heteroscedasticity is a property of the Poisson distribution, but all another steps are the same.</p>
+<p>To understand the estimate of the slope in a Poisson GLM we need to transform it back, e.g. from <code>log</code> (which is the natural logarithm in R) using the exponential function. This introduces a nonlinear behavior, a curve, and the slope now becomes the rate of the change of the tangent line to the curve.</p>
+<iframe src="https://www.youtube.com/embed/imXXa34yu6U" width="672" height="400px">
+</iframe>
+<p>Question:</p>
+<ul>
+<li>A slope smaller than 1, would that result in increasing function (curve) or a decreasing function?</li>
+<li>What is overdispersion?</li>
+</ul>
+</div>
+<div id="binomial-glm-motivation-binomial-glm" class="section level2">
+<h2><span class="header-section-number">10.5</span> Binomial GLM: Motivation Binomial GLM</h2>
+<p>We use the a binomial GLM if our response data consist of two level factor. It follow the same steps as the binomial GLM, however the intercepts and slopes are interpreted differently. In this first screencast we discuss the motivation behind using the binomial GLM.</p>
+<iframe src="https://www.youtube.com/embed/fd3vB5670Po" width="672" height="400px">
+</iframe>
+<p>Questions:</p>
+<ul>
+<li>What is the main motivation to use binomial GLM?</li>
+</ul>
+</div>
+<div id="binomial-glm-analysing-a-binomial-glm" class="section level2">
+<h2><span class="header-section-number">10.6</span> Binomial GLM: Analysing a Binomial GLM</h2>
+<p>In analyzing GLM data we use the same steps as before. However, it become difficult to perform good model diagnostics, either due to the small number of observation because the number of success is reduced to one number or as the two-value nature of the response variable, as will be explained below.</p>
+<iframe src="https://www.youtube.com/embed/hGJG2C_aLGk" width="672" height="400px">
+</iframe>
+<p>Question:</p>
+<ul>
+<li>If you prepare and experiment for the analysis with a binomial experiment, in what range of the numerical response variable should you have enough data?</li>
+</ul>
+</div>
+<div id="binomial-glm-interpretation-of-the-estimates" class="section level2">
+<h2><span class="header-section-number">10.7</span> Binomial GLM: Interpretation of the estimates</h2>
+<p>The interpretation of slopes and intercepts are different as compared to the Poisson GLM. Now the response is interpreted as the probability of success and intercepts and slopes are related to odd ratios or risks</p>
+<iframe src="https://www.youtube.com/embed/opEaRTJxZXw" width="672" height="400px">
+</iframe>
+<ul>
+<li>what is the log odds-ratio?</li>
+</ul>
 
 </div>
 </div>
