@@ -238,12 +238,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.7" data-path="glm.html"><a href="glm.html#binomial-glm-interpretation-of-the-estimates"><i class="fa fa-check"></i><b>10.7</b> Binomial GLM: Interpretation of the estimates</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a><ul>
-<li class="chapter" data-level="11.1" data-path="pca.html"><a href="pca.html#lecture-pca"><i class="fa fa-check"></i><b>11.1</b> Lecture: PCA</a></li>
-<li class="chapter" data-level="11.2" data-path="pca.html"><a href="pca.html#exercises-11"><i class="fa fa-check"></i><b>11.2</b> Exercises</a></li>
+<li class="chapter" data-level="11.1" data-path="pca.html"><a href="pca.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="pca.html"><a href="pca.html#motivation-behind-pca"><i class="fa fa-check"></i><b>11.2</b> Motivation behind PCA</a></li>
+<li class="chapter" data-level="11.3" data-path="pca.html"><a href="pca.html#pca-fundamentals"><i class="fa fa-check"></i><b>11.3</b> PCA fundamentals</a></li>
+<li class="chapter" data-level="11.4" data-path="pca.html"><a href="pca.html#pca-in-classification"><i class="fa fa-check"></i><b>11.4</b> PCA in classification</a></li>
+<li class="chapter" data-level="11.5" data-path="pca.html"><a href="pca.html#pca-and-gradients"><i class="fa fa-check"></i><b>11.5</b> PCA and gradients</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a><ul>
 <li class="chapter" data-level="12.1" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#lecture-overview"><i class="fa fa-check"></i><b>12.1</b> Lecture: Overview</a></li>
-<li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-12"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
+<li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-11"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
 </ul></li>
 </ul>
 
@@ -266,11 +269,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 11</span> PCA</h1>
 <p><small><i>An <b>exploratory technique</b> for explaining the variance among a group of continuous variables, by creating linear combinations.</i></small></p>
 <hr />
-<div id="lecture-pca" class="section level2">
-<h2><span class="header-section-number">11.1</span> Lecture: PCA</h2>
+<div id="introduction-4" class="section level2">
+<h2><span class="header-section-number">11.1</span> Introduction</h2>
+<p>Principal Component Analysis, or PCA in short, is a dimension reduction method or unsupervised machine learning method in modern statistical language. PCA is an exploratory method and need to be contrasted with conformational method’s like the methods discussed in the previous two weeks, and prediction methods, that are not discussed in this course. Exploratory methods are used when there is no clear enough understanding of our system of interest to generate an meaningful hypothesis; a hypothesis for conformational statistics. One example is the measurement of many morphological or genetic features of different Species within a genus. The dataset is than explored to identify those features that that can be used to classify or reltaed species to each other.</p>
+<p>Now imagine a spreadsheet with individual subjects as rows and features or properties as columns. An example could be a dataset within each row an ID representing an individual, followed by 250 features measured on that individual; in the context of dimension reduction (PCA) this dataset contains 250 dimensions. Its clear that we cannot visualize 250 dimensions effectively in order to explore the dataset, at least not as in the case of a two dimensional setting (x,y) used in the previous weeks.</p>
+<p>As a dimension reduction method, PCA reduces the dimensions of the problem, 250 dimensions in our example, to a two dimensional space that can be represent in a x,y plot that we can investigate on paper (and also the flat computer screen). In doing so it tries to extract the maximal amount of information from the higher dimensional space and concentrate it in two dimensions. Information used to accomplish this takes the following statistics measures,</p>
+<ul>
+<li><strong>Variance</strong>: If a variable (dimensions) varies a lot in you data, it means that its dimension has discriminating properties and caries information. The opposite, no variation, would mean that the property is shared by all individuals and no groups of individuals can be singled out, therefore this dimension would not carry any information.<br />
+</li>
+<li><strong>Correlation</strong>: If variables (dimensions) vary, then they can correlate. If features are correlated, then we might expect that there is some morphological or functional relations and that feature therefore caries information.</li>
+</ul>
+<p>We shall work out these ideas in the following screencasts. The fundamentals of PCA are however, based on linear algebra which is unfortunately outside the scoop of this course. Therefore we will take a more intuitive approach in the screencasts, using the concepts introduced in the previous two weeks, the aforementioned variance and correlations.</p>
 </div>
-<div id="exercises-11" class="section level2">
-<h2><span class="header-section-number">11.2</span> Exercises</h2>
+<div id="motivation-behind-pca" class="section level2">
+<h2><span class="header-section-number">11.2</span> Motivation behind PCA</h2>
+<p>This screencast explains the basic motivation behind dimensions reduction PCA. First the explanation behind the dimension reduction of a 3D object into 2D. It also addresses the meaning of the modern classification of PCA as an unsupervised machine learning methodology by comparing it with supervised machine learning.</p>
+<p>As an simple example the Iris data is used. This data set will we analyzed in more detail in another screencast.</p>
+<iframe src="https://www.youtube.com/embed/xBTy5GMUHZ8" width="672" height="400px">
+</iframe>
+<p>Questions:</p>
+<ul>
+<li>What is the difference between supervised and unsupervised machine learning methodologies.</li>
+</ul>
+</div>
+<div id="pca-fundamentals" class="section level2">
+<h2><span class="header-section-number">11.3</span> PCA fundamentals</h2>
+<p>PCA algorithm is solidly based on linear algebra. Without going in to detail we will use a concept and two measures from linear algebra:</p>
+<ul>
+<li><strong>Orthogonality</strong>: Dimensions (variables) are independent of each other if they are Orthogonal; geometrically we would visualize that as perpendicular dimensions (axes).</li>
+<li><strong>Eigenvectors</strong>: The directions of these <strong>orthogonal</strong> axes, and thus the principal components, are given by the eigenvectors.</li>
+<li><strong>Eigenvalues</strong>: The length, or weights, of the eigenvectors are given by the eigenvalues. It turns out that the eigenvalues are directly related to the variance of the principle component.</li>
+</ul>
+<p>PCA captures the most variance in the first new axes, the first principal component, by capturing most of the information (variance or eigenvalues). This is repeated for the next orthogonal principal component by capturing the most information (variance or eigenvalue) that is left after the previous step. These steps are repeated until we have the same number of principle components as dimensions.</p>
+<iframe src="https://www.youtube.com/embed/3506wDe-A4A" width="672" height="400px">
+</iframe>
+<ul>
+<li>How we need to interpret the loading of a variables in a principal component?</li>
+</ul>
+</div>
+<div id="pca-in-classification" class="section level2">
+<h2><span class="header-section-number">11.4</span> PCA in classification</h2>
+<p>In this simple example the Iris data, introduced earlier, are analyzed using PCA. Note that normally we do not have the information on which species the individuals belong to, unsupervised. The species are only used here for a didactic purpose.</p>
+<iframe src="https://www.youtube.com/embed/k-qh_xR6-gA" width="672" height="400px">
+</iframe>
+<p>Questions:</p>
+<ul>
+<li><p>Which of the Sepal or Petal width and lengths were important in the first and which in the second principal component?</p></li>
+<li><p>Which feature(s) (variable(s)) is response for the separation between Versicolor and Virginica?</p></li>
+</ul>
+</div>
+<div id="pca-and-gradients" class="section level2">
+<h2><span class="header-section-number">11.5</span> PCA and gradients</h2>
+<p>The Heptathlon dataset give the scores, for every athlete, for the different disciplines of the woman’s Olympic Heptathlon of 1988 in Seoul. The row are the individual athletes and the columns the scores per discipline. This dataset might be interesting for the coaches to investigate if one of disciplines might contribute more to a success than another. Here we do not look in particular to clusters of groups of athletes but if the distribution of the individual athlete is related to the final score when visualizing the principal components.
+The relation with linear regression and supervised learning is also discussed.</p>
+<iframe src="https://www.youtube.com/embed/W0A4R8INP40" width="672" height="400px">
+</iframe>
+<p>Question</p>
+<ul>
+<li>Explain in your own words which disciplines contributed to the success of Jackie Joyner-Kersee.</li>
+</ul>
+<hr />
+<p>PCA is also covered in <a href="https://github.com/FransRodenburg/Biostatistics-Book-Series/blob/main/Elements_of_Biostatistics_Sep2020.pdf">Elements of Biostatistics</a>, chapter 4.</p>
 
 </div>
 </div>
