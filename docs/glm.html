@@ -307,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="poisson-glm-analysis-of-glm-data-and-interpretation" class="section level2">
 <h2><span class="header-section-number">10.4</span> Poisson GLM: Analysis of GLM data and interpretation</h2>
-<p>In the GLM we transform the model in order to to get the residuals to behave as a normal distribution again. The assumption of homoscedasticity is essential needed for GLM as heteroscedasticity is a property of the Poisson distribution, but all another steps are the same.</p>
+<p>In the GLM we transform the model in order to to get the residuals to behave as a normal distribution again. The assumption of homoscedasticity is not relevant for GLM, as heteroscedasticity is a property of the Poisson distribution. Other than that, the steps are mostly the same as with the linear models you have seen before.</p>
 <p>To understand the estimate of the slope in a Poisson GLM we need to transform it back, e.g. from <code>log</code> (which is the natural logarithm in R) using the exponential function. This introduces a nonlinear behavior, a curve, and the slope now becomes the rate of the change of the tangent line to the curve.</p>
 <iframe src="https://www.youtube.com/embed/imXXa34yu6U" width="672" height="400px">
 </iframe>
