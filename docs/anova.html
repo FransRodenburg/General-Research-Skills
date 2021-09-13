@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 ANOVA | General Research Skills</title>
   <meta name="description" content="Chapter 6 ANOVA | General Research Skills" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 ANOVA | General Research Skills" />
   <meta property="og:type" content="book" />
@@ -32,6 +32,7 @@
   
 <link rel="prev" href="statistical-tests.html"/>
 <link rel="next" href="simple-linear-regression.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -57,18 +59,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -88,7 +90,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -121,6 +123,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -138,97 +141,121 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="installation-tutorial.html"><a href="installation-tutorial.html"><i class="fa fa-check"></i><b>1</b> Installation &amp; Tutorial</a><ul>
-<li class="chapter" data-level="1.1" data-path="installation-tutorial.html"><a href="installation-tutorial.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a><ul>
+<li class="chapter" data-level="1" data-path="installation-tutorial.html"><a href="installation-tutorial.html"><i class="fa fa-check"></i><b>1</b> Installation &amp; Tutorial</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="installation-tutorial.html"><a href="installation-tutorial.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a>
+<ul>
 <li class="chapter" data-level="" data-path="installation-tutorial.html"><a href="installation-tutorial.html#note-about-tinytex"><i class="fa fa-check"></i>Note about TinyTeX</a></li>
 <li class="chapter" data-level="" data-path="installation-tutorial.html"><a href="installation-tutorial.html#note-about-installation-problems-in-general"><i class="fa fa-check"></i>Note about installation problems in general</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="installation-tutorial.html"><a href="installation-tutorial.html#about-rstudio-r-markdown"><i class="fa fa-check"></i><b>1.2</b> About RStudio &amp; R Markdown</a></li>
 <li class="chapter" data-level="1.3" data-path="installation-tutorial.html"><a href="installation-tutorial.html#about-the-r-language"><i class="fa fa-check"></i><b>1.3</b> About the R Language</a></li>
-<li class="chapter" data-level="1.4" data-path="installation-tutorial.html"><a href="installation-tutorial.html#tutorials"><i class="fa fa-check"></i><b>1.4</b> Tutorials</a><ul>
+<li class="chapter" data-level="1.4" data-path="installation-tutorial.html"><a href="installation-tutorial.html#tutorials"><i class="fa fa-check"></i><b>1.4</b> Tutorials</a>
+<ul>
 <li class="chapter" data-level="1.4.1" data-path="installation-tutorial.html"><a href="installation-tutorial.html#exercise-swirl"><i class="fa fa-check"></i><b>1.4.1</b> Exercise: <code>swirl</code></a></li>
 <li class="chapter" data-level="1.4.2" data-path="installation-tutorial.html"><a href="installation-tutorial.html#exercise-learnr-optional"><i class="fa fa-check"></i><b>1.4.2</b> Exercise <code>learnr</code> (optional)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>2</b> Random Variables</a><ul>
-<li class="chapter" data-level="2.1" data-path="random-variables.html"><a href="random-variables.html#what-are-random-variables"><i class="fa fa-check"></i><b>2.1</b> What are Random Variables?</a><ul>
+<li class="chapter" data-level="2" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>2</b> Random Variables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="random-variables.html"><a href="random-variables.html#what-are-random-variables"><i class="fa fa-check"></i><b>2.1</b> What are Random Variables?</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="random-variables.html"><a href="random-variables.html#exercise"><i class="fa fa-check"></i><b>2.1.1</b> Exercise</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="random-variables.html"><a href="random-variables.html#degrees-of-freedom"><i class="fa fa-check"></i><b>2.2</b> Degrees of Freedom</a><ul>
+<li class="chapter" data-level="2.2" data-path="random-variables.html"><a href="random-variables.html#degrees-of-freedom"><i class="fa fa-check"></i><b>2.2</b> Degrees of Freedom</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="random-variables.html"><a href="random-variables.html#exercises"><i class="fa fa-check"></i><b>2.2.1</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="study-design.html"><a href="study-design.html"><i class="fa fa-check"></i><b>3</b> Study Design</a><ul>
-<li class="chapter" data-level="3.1" data-path="study-design.html"><a href="study-design.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3" data-path="study-design.html"><a href="study-design.html"><i class="fa fa-check"></i><b>3</b> Study Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="study-design.html"><a href="study-design.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="study-design.html"><a href="study-design.html#from-research-question-to-statistical-model"><i class="fa fa-check"></i><b>3.1.1</b> From Research Question to Statistical Model</a></li>
 <li class="chapter" data-level="3.1.2" data-path="study-design.html"><a href="study-design.html#statistical-models-spreadsheet-and-experimental-design"><i class="fa fa-check"></i><b>3.1.2</b> Statistical models, Spreadsheet and Experimental Design</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="study-design.html"><a href="study-design.html#elements-of-experimental-design"><i class="fa fa-check"></i><b>3.2</b> Elements of Experimental Design</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing</a><ul>
+<li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
 <li class="chapter" data-level="4.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#statistics-test-statistics-hypothesis-tests"><i class="fa fa-check"></i><b>4.2</b> Statistics, test-statistics &amp; hypothesis tests</a></li>
 <li class="chapter" data-level="4.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test-step-by-step"><i class="fa fa-check"></i><b>4.3</b> One sample t-test: step by step</a></li>
 <li class="chapter" data-level="4.4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#assumptions"><i class="fa fa-check"></i><b>4.4</b> Assumptions</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="statistical-tests.html"><a href="statistical-tests.html"><i class="fa fa-check"></i><b>5</b> Statistical Tests</a><ul>
-<li class="chapter" data-level="5.1" data-path="statistical-tests.html"><a href="statistical-tests.html#t-test"><i class="fa fa-check"></i><b>5.1</b> T-Test</a><ul>
+<li class="chapter" data-level="5" data-path="statistical-tests.html"><a href="statistical-tests.html"><i class="fa fa-check"></i><b>5</b> Statistical Tests</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="statistical-tests.html"><a href="statistical-tests.html#t-test"><i class="fa fa-check"></i><b>5.1</b> T-Test</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="statistical-tests.html"><a href="statistical-tests.html#choosing-the-right-t-test"><i class="fa fa-check"></i><b>5.1.1</b> Choosing the right <span class="math inline">\(t\)</span>-test</a></li>
 <li class="chapter" data-level="5.1.2" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-1"><i class="fa fa-check"></i><b>5.1.2</b> Exercises</a></li>
 <li class="chapter" data-level="5.1.3" data-path="statistical-tests.html"><a href="statistical-tests.html#understanding-how-the-t-test-works"><i class="fa fa-check"></i><b>5.1.3</b> Understanding how the <span class="math inline">\(t\)</span>-test works</a></li>
 <li class="chapter" data-level="5.1.4" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-2"><i class="fa fa-check"></i><b>5.1.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="statistical-tests.html"><a href="statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>5.2</b> Chi-Squared Test</a><ul>
+<li class="chapter" data-level="5.2" data-path="statistical-tests.html"><a href="statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>5.2</b> Chi-Squared Test</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="statistical-tests.html"><a href="statistical-tests.html#lecture"><i class="fa fa-check"></i><b>5.2.1</b> Lecture</a></li>
 <li class="chapter" data-level="5.2.2" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-3"><i class="fa fa-check"></i><b>5.2.2</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="statistical-tests.html"><a href="statistical-tests.html#multiple-testing"><i class="fa fa-check"></i><b>5.3</b> Multiple Testing</a><ul>
+<li class="chapter" data-level="5.3" data-path="statistical-tests.html"><a href="statistical-tests.html#multiple-testing"><i class="fa fa-check"></i><b>5.3</b> Multiple Testing</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="statistical-tests.html"><a href="statistical-tests.html#lecture-1"><i class="fa fa-check"></i><b>5.3.1</b> Lecture</a></li>
 <li class="chapter" data-level="5.3.2" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-4"><i class="fa fa-check"></i><b>5.3.2</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>6</b> ANOVA</a><ul>
-<li class="chapter" data-level="6.1" data-path="anova.html"><a href="anova.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a><ul>
+<li class="chapter" data-level="6" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>6</b> ANOVA</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="anova.html"><a href="anova.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a>
+<ul>
 <li class="chapter" data-level="" data-path="anova.html"><a href="anova.html#summary-of-the-example-in-the-video"><i class="fa fa-check"></i>Summary of the example in the video</a></li>
 <li class="chapter" data-level="6.1.1" data-path="anova.html"><a href="anova.html#exercises-5"><i class="fa fa-check"></i><b>6.1.1</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="anova.html"><a href="anova.html#how-does-anova-work"><i class="fa fa-check"></i><b>6.2</b> How does ANOVA work?</a><ul>
+<li class="chapter" data-level="6.2" data-path="anova.html"><a href="anova.html#how-does-anova-work"><i class="fa fa-check"></i><b>6.2</b> How does ANOVA work?</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="anova.html"><a href="anova.html#exercises-6"><i class="fa fa-check"></i><b>6.2.1</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="anova.html"><a href="anova.html#two-way-multi-way-interaction"><i class="fa fa-check"></i><b>6.3</b> Two-Way, Multi-Way &amp; Interaction</a><ul>
+<li class="chapter" data-level="6.3" data-path="anova.html"><a href="anova.html#two-way-multi-way-interaction"><i class="fa fa-check"></i><b>6.3</b> Two-Way, Multi-Way &amp; Interaction</a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="anova.html"><a href="anova.html#exercises-7"><i class="fa fa-check"></i><b>6.3.1</b> Exercises</a></li>
 <li class="chapter" data-level="6.3.2" data-path="anova.html"><a href="anova.html#additional-exercises"><i class="fa fa-check"></i><b>6.3.2</b> Additional Exercises (*)</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="anova.html"><a href="anova.html#where-is-part-4"><i class="fa fa-check"></i><b>6.4</b> Where is part 4? (*)</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>7</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="7.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#overview-1"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
+<li class="chapter" data-level="7" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>7</b> Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#overview-1"><i class="fa fa-check"></i><b>7.1</b> Overview</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#LMsummary"><i class="fa fa-check"></i><b>7.1.1</b> Summary of the example in the video</a></li>
 <li class="chapter" data-level="7.1.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-8"><i class="fa fa-check"></i><b>7.1.2</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#step-by-step-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Step-by-Step Walkthrough</a></li>
-<li class="chapter" data-level="7.3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.3</b> Model Diagnostics</a><ul>
+<li class="chapter" data-level="7.3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.3</b> Model Diagnostics</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-9"><i class="fa fa-check"></i><b>7.3.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#transformation"><i class="fa fa-check"></i><b>7.4</b> Transformation</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a><ul>
+<li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="factorial-anova.html"><a href="factorial-anova.html#interaction"><i class="fa fa-check"></i><b>8.1</b> Interaction</a></li>
 <li class="chapter" data-level="8.2" data-path="factorial-anova.html"><a href="factorial-anova.html#three-example-factorial-anova-data-sets"><i class="fa fa-check"></i><b>8.2</b> Three example factorial ANOVA data sets</a></li>
 <li class="chapter" data-level="8.3" data-path="factorial-anova.html"><a href="factorial-anova.html#model-specification-and-diagnostics"><i class="fa fa-check"></i><b>8.3</b> Model specification and diagnostics</a></li>
 <li class="chapter" data-level="8.4" data-path="factorial-anova.html"><a href="factorial-anova.html#model-selection"><i class="fa fa-check"></i><b>8.4</b> Model selection</a></li>
 <li class="chapter" data-level="8.5" data-path="factorial-anova.html"><a href="factorial-anova.html#some-final-thoughts-and-visualisation"><i class="fa fa-check"></i><b>8.5</b> Some final thoughts and visualisation</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html"><i class="fa fa-check"></i><b>9</b> ANCOVA &amp; Model Selection</a><ul>
+<li class="chapter" data-level="9" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html"><i class="fa fa-check"></i><b>9</b> ANCOVA &amp; Model Selection</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
 <li class="chapter" data-level="9.2" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-ancova-explained-by-simulations"><i class="fa fa-check"></i><b>9.2</b> The ANCOVA explained by simulations</a></li>
 <li class="chapter" data-level="9.3" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-analysis-of-ancova-data-step-by-step"><i class="fa fa-check"></i><b>9.3</b> The analysis of ANCOVA data step by step</a></li>
 <li class="chapter" data-level="9.4" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#some-questions"><i class="fa fa-check"></i><b>9.4</b> Some questions</a></li>
-<li class="chapter" data-level="9.5" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#model-selection-1"><i class="fa fa-check"></i><b>9.5</b> Model Selection</a><ul>
+<li class="chapter" data-level="9.5" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#model-selection-1"><i class="fa fa-check"></i><b>9.5</b> Model Selection</a>
+<ul>
 <li class="chapter" data-level="9.5.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#exercises-10"><i class="fa fa-check"></i><b>9.5.1</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a><ul>
+<li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="glm.html"><a href="glm.html#introduction-3"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
 <li class="chapter" data-level="10.2" data-path="glm.html"><a href="glm.html#poisson-glm-introduction"><i class="fa fa-check"></i><b>10.2</b> Poisson GLM: Introduction</a></li>
 <li class="chapter" data-level="10.3" data-path="glm.html"><a href="glm.html#poisson-glm-model-specification"><i class="fa fa-check"></i><b>10.3</b> Poisson GLM: Model specification</a></li>
@@ -237,14 +264,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.6" data-path="glm.html"><a href="glm.html#binomial-glm-analysing-a-binomial-glm"><i class="fa fa-check"></i><b>10.6</b> Binomial GLM: Analysing a Binomial GLM</a></li>
 <li class="chapter" data-level="10.7" data-path="glm.html"><a href="glm.html#binomial-glm-interpretation-of-the-estimates"><i class="fa fa-check"></i><b>10.7</b> Binomial GLM: Interpretation of the estimates</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a><ul>
+<li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="pca.html"><a href="pca.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="pca.html"><a href="pca.html#motivation-behind-pca"><i class="fa fa-check"></i><b>11.2</b> Motivation behind PCA</a></li>
 <li class="chapter" data-level="11.3" data-path="pca.html"><a href="pca.html#pca-fundamentals"><i class="fa fa-check"></i><b>11.3</b> PCA fundamentals</a></li>
 <li class="chapter" data-level="11.4" data-path="pca.html"><a href="pca.html#pca-in-classification"><i class="fa fa-check"></i><b>11.4</b> PCA in classification</a></li>
 <li class="chapter" data-level="11.5" data-path="pca.html"><a href="pca.html#pca-and-gradients"><i class="fa fa-check"></i><b>11.5</b> PCA and gradients</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a><ul>
+<li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#lecture-overview"><i class="fa fa-check"></i><b>12.1</b> Lecture: Overview</a></li>
 <li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-11"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
 </ul></li>
@@ -265,11 +294,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="anova" class="section level1">
+<div id="anova" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter 6</span> ANOVA</h1>
 <p><small><i>Analysis of variance (ANOVA) is a model for <b>comparing any number of group means</b>. The observations are assumed to be <b>independent</b>, deviations from the group means are assumed to follow a <b>normal distribution</b>, and group <b>variances are assumed to be equal</b>.</i></small></p>
 <hr />
-<div id="overview" class="section level2">
+<div id="overview" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Overview</h2>
 <p>Watch part 1 of the ANOVA lecture and answer the questions below.</p>
 <iframe src="https://www.youtube.com/embed/BFB4o4uBgPs" width="672" height="400px">
@@ -278,52 +307,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Summary of the example in the video</h3>
 <p>Here is a summary if you want to reproduce the example analysis:</p>
 <p>1. Enter the data:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="anova.html#cb8-1"></a>SBP       &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">121</span>, <span class="dv">122</span>, <span class="dv">114</span>, <span class="dv">124</span>, <span class="dv">118</span>, <span class="dv">127</span>, <span class="co"># thiazide</span></span>
-<span id="cb8-2"><a href="anova.html#cb8-2"></a>               <span class="dv">126</span>, <span class="dv">128</span>, <span class="dv">118</span>, <span class="dv">130</span>, <span class="dv">132</span>, <span class="dv">124</span>, <span class="co"># calcium channel blockers</span></span>
-<span id="cb8-3"><a href="anova.html#cb8-3"></a>               <span class="dv">145</span>, <span class="dv">145</span>, <span class="dv">139</span>, <span class="dv">133</span>, <span class="dv">146</span>, <span class="dv">150</span>) <span class="co"># placebo</span></span>
-<span id="cb8-4"><a href="anova.html#cb8-4"></a>treatment &lt;-<span class="st"> </span><span class="kw">gl</span>(<span class="dt">n =</span> <span class="dv">3</span>, <span class="dt">k =</span> <span class="dv">6</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;thiazide&quot;</span>, <span class="st">&quot;CCB&quot;</span>, <span class="st">&quot;placebo&quot;</span>))</span>
-<span id="cb8-5"><a href="anova.html#cb8-5"></a>DF        &lt;-<span class="st"> </span><span class="kw">data.frame</span>(treatment, SBP)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="anova.html#cb8-1" aria-hidden="true" tabindex="-1"></a>SBP       <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">121</span>, <span class="dv">122</span>, <span class="dv">114</span>, <span class="dv">124</span>, <span class="dv">118</span>, <span class="dv">127</span>, <span class="co"># thiazide</span></span>
+<span id="cb8-2"><a href="anova.html#cb8-2" aria-hidden="true" tabindex="-1"></a>               <span class="dv">126</span>, <span class="dv">128</span>, <span class="dv">118</span>, <span class="dv">130</span>, <span class="dv">132</span>, <span class="dv">124</span>, <span class="co"># calcium channel blockers</span></span>
+<span id="cb8-3"><a href="anova.html#cb8-3" aria-hidden="true" tabindex="-1"></a>               <span class="dv">145</span>, <span class="dv">145</span>, <span class="dv">139</span>, <span class="dv">133</span>, <span class="dv">146</span>, <span class="dv">150</span>) <span class="co"># placebo</span></span>
+<span id="cb8-4"><a href="anova.html#cb8-4" aria-hidden="true" tabindex="-1"></a>treatment <span class="ot">&lt;-</span> <span class="fu">gl</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">k =</span> <span class="dv">6</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;thiazide&quot;</span>, <span class="st">&quot;CCB&quot;</span>, <span class="st">&quot;placebo&quot;</span>))</span>
+<span id="cb8-5"><a href="anova.html#cb8-5" aria-hidden="true" tabindex="-1"></a>DF        <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(treatment, SBP)</span></code></pre></div>
 <p>2. Plot the data:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="anova.html#cb9-1"></a><span class="kw">plot</span>(SBP <span class="op">~</span><span class="st"> </span>treatment, <span class="dt">data =</span> DF)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="anova.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(SBP <span class="sc">~</span> treatment, <span class="at">data =</span> DF)</span></code></pre></div>
 <p>3. Fit an ANOVA:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="anova.html#cb10-1"></a>ANOVA &lt;-<span class="st"> </span><span class="kw">aov</span>(SBP <span class="op">~</span><span class="st"> </span>treatment)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="anova.html#cb10-1" aria-hidden="true" tabindex="-1"></a>ANOVA <span class="ot">&lt;-</span> <span class="fu">aov</span>(SBP <span class="sc">~</span> treatment)</span></code></pre></div>
 <p>4. Perform visual diagnostics:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="anova.html#cb11-1"></a><span class="kw">require</span>(<span class="st">&quot;car&quot;</span>)            <span class="co"># Install if missing</span></span>
-<span id="cb11-2"><a href="anova.html#cb11-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))      <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb11-3"><a href="anova.html#cb11-3"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
-<span id="cb11-4"><a href="anova.html#cb11-4"></a><span class="kw">qqPlot</span>(ANOVA, <span class="dt">reps =</span> <span class="fl">1e4</span>) <span class="co"># QQ-plot. See footnote for errors</span></span>
-<span id="cb11-5"><a href="anova.html#cb11-5"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
-<span id="cb11-6"><a href="anova.html#cb11-6"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
-<span id="cb11-7"><a href="anova.html#cb11-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))      <span class="co"># Restore the default</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="anova.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(<span class="st">&quot;car&quot;</span>)            <span class="co"># Install if missing</span></span>
+<span id="cb11-2"><a href="anova.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))      <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb11-3"><a href="anova.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ANOVA, <span class="at">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
+<span id="cb11-4"><a href="anova.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qqPlot</span>(ANOVA, <span class="at">reps =</span> <span class="fl">1e4</span>) <span class="co"># QQ-plot. See footnote for errors</span></span>
+<span id="cb11-5"><a href="anova.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ANOVA, <span class="at">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
+<span id="cb11-6"><a href="anova.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ANOVA, <span class="at">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
+<span id="cb11-7"><a href="anova.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))      <span class="co"># Restore the default</span></span></code></pre></div>
 <p>5. Check the omnibus test:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="anova.html#cb12-1"></a><span class="kw">summary</span>(ANOVA)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="anova.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ANOVA)</span></code></pre></div>
 <p>6. If the omnibus test is significant, you can perform a post hoc analysis:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="anova.html#cb13-1"></a>posthoc &lt;-<span class="st"> </span><span class="kw">TukeyHSD</span>(ANOVA)</span>
-<span id="cb13-2"><a href="anova.html#cb13-2"></a><span class="kw">print</span>(posthoc)</span>
-<span id="cb13-3"><a href="anova.html#cb13-3"></a><span class="kw">plot</span>(posthoc)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="anova.html#cb13-1" aria-hidden="true" tabindex="-1"></a>posthoc <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(ANOVA)</span>
+<span id="cb13-2"><a href="anova.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(posthoc)</span>
+<span id="cb13-3"><a href="anova.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(posthoc)</span></code></pre></div>
 </div>
-<div id="exercises-5" class="section level3">
+<div id="exercises-5" class="section level3" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> Exercises</h3>
 <p><img src="figures/PlantGrowth.png" width="100%" /></p>
 <ol style="list-style-type: decimal">
 <li>The <code>PlantGrowth</code> data set is included with the default installation of R. It contains <span class="math inline">\(30\)</span> independent measurements of dry weight from plants subjected to three types of treatment. You can view it by running <code>View(PlantGrowth)</code> in the console, or you can see the structure of the data and produce a summary of the data like this:</li>
 </ol>
 <p><small></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="anova.html#cb14-1"></a><span class="kw">str</span>(PlantGrowth)</span>
-<span id="cb14-2"><a href="anova.html#cb14-2"></a><span class="kw">summary</span>(PlantGrowth)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="anova.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(PlantGrowth)</span>
+<span id="cb14-2"><a href="anova.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(PlantGrowth)</span></code></pre></div>
 <p></small></p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Make a plot showing the weight of the different groups. You can use the same kind of plot as <a href="https://youtu.be/BFB4o4uBgPs?t=132">shown in the video</a>.</p></li>
 <li><p>Fit an ANOVA and save it as an object called <code>ANOVA</code>.</p></li>
 <li><p>Here is the code I used in the video to perform visual diagnostics. Run it and comment on the plots.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="anova.html#cb15-1"></a><span class="kw">require</span>(<span class="st">&quot;car&quot;</span>)            <span class="co"># Install if missing</span></span>
-<span id="cb15-2"><a href="anova.html#cb15-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))      <span class="co"># Plot in a 2x2 grid</span></span>
-<span id="cb15-3"><a href="anova.html#cb15-3"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
-<span id="cb15-4"><a href="anova.html#cb15-4"></a><span class="kw">qqPlot</span>(ANOVA, <span class="dt">reps =</span> <span class="fl">1e4</span>) <span class="co"># QQ-plot. See footnote for errors</span></span>
-<span id="cb15-5"><a href="anova.html#cb15-5"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
-<span id="cb15-6"><a href="anova.html#cb15-6"></a><span class="kw">plot</span>(ANOVA, <span class="dt">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
-<span id="cb15-7"><a href="anova.html#cb15-7"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))      <span class="co"># Restore the default</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="anova.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(<span class="st">&quot;car&quot;</span>)            <span class="co"># Install if missing</span></span>
+<span id="cb15-2"><a href="anova.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))      <span class="co"># Plot in a 2x2 grid</span></span>
+<span id="cb15-3"><a href="anova.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ANOVA, <span class="at">which =</span> <span class="dv">1</span>)    <span class="co"># Residuals vs fitted</span></span>
+<span id="cb15-4"><a href="anova.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qqPlot</span>(ANOVA, <span class="at">reps =</span> <span class="fl">1e4</span>) <span class="co"># QQ-plot. See footnote for errors</span></span>
+<span id="cb15-5"><a href="anova.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ANOVA, <span class="at">which =</span> <span class="dv">3</span>)    <span class="co"># Scale-location</span></span>
+<span id="cb15-6"><a href="anova.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(ANOVA, <span class="at">which =</span> <span class="dv">4</span>)    <span class="co"># Cook&#39;s distance</span></span>
+<span id="cb15-7"><a href="anova.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))      <span class="co"># Restore the default</span></span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Perform the omnibus test. Is there a difference in weight among any of the groups?</p></li>
 <li><p>Perform a post hoc analysis. Which group means differ significantly?</p></li>
@@ -331,12 +360,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 </div>
 </div>
-<div id="how-does-anova-work" class="section level2">
+<div id="how-does-anova-work" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> How does ANOVA work?</h2>
 <p>Watch part 2 of the ANOVA lecture and answer the questions below.</p>
 <iframe src="https://www.youtube.com/embed/87ECInQIY9k" width="672" height="400px">
 </iframe>
-<div id="exercises-6" class="section level3">
+<div id="exercises-6" class="section level3" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Exercises</h3>
 <ol style="list-style-type: decimal">
 <li>Are the following statements <b>true</b> or <b>false</b>?</li>
@@ -376,12 +405,12 @@ Residuals   48   5745     y                       </code></pre>
 <hr />
 </div>
 </div>
-<div id="two-way-multi-way-interaction" class="section level2">
+<div id="two-way-multi-way-interaction" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Two-Way, Multi-Way &amp; Interaction</h2>
 <p>Watch part 3 of the ANOVA lecture and answer the questions below.</p>
 <iframe src="https://www.youtube.com/embed/kNPl8Vo8Jlk" width="672" height="400px">
 </iframe>
-<div id="exercises-7" class="section level3">
+<div id="exercises-7" class="section level3" number="6.3.1">
 <h3><span class="header-section-number">6.3.1</span> Exercises</h3>
 <p>In an experiment on rats, a researcher wanted to find out what the effect would be of the genotype of the biological mother and the foster mother on the growth of the rats.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="math inline">\(61\)</span> rat litters were taken from their biological mother and placed with a foster mother. See the figure below.</p>
 <p><img src="General-Research-Skills_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
@@ -390,14 +419,14 @@ Residuals   48   5745     y                       </code></pre>
 <li><p>Do you expect an interaction or main effects here? Explain.</p></li>
 <li><p>Based on your answer to the previous question, run an appropriate ANOVA for this data set. Perform visual diagnostics, look at the <code>summary</code>, and perform a post hoc analysis. Write a short conclusion. The data set is called <code>genotype</code> and you can access it by loading the package <code>MASS</code>:</p></li>
 </ol>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="anova.html#cb18-1"></a><span class="kw">require</span>(<span class="st">&quot;MASS&quot;</span>) <span class="co"># Comes preinstalled with R</span></span>
-<span id="cb18-2"><a href="anova.html#cb18-2"></a><span class="kw">str</span>(genotype)</span>
-<span id="cb18-3"><a href="anova.html#cb18-3"></a><span class="kw">summary</span>(genotype)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="anova.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(<span class="st">&quot;MASS&quot;</span>) <span class="co"># Comes preinstalled with R</span></span>
+<span id="cb18-2"><a href="anova.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(genotype)</span>
+<span id="cb18-3"><a href="anova.html#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(genotype)</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>(hard) Search online for the definition of the <a href="http://www.google.com/search?q=central+limit+theorem">central limit theorem</a>. Is normality of the residuals a reasonable assumption for this study from a theoretical point of view? <small><em>(HINT: Look at the help page for the <code>genotype</code> data set and read the description of the outcome variable.)</em></small></li>
 </ol>
 </div>
-<div id="additional-exercises" class="section level3">
+<div id="additional-exercises" class="section level3" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Additional Exercises (*)</h3>
 <p><img src="figures/Iris.png" width="100%" /></p>
 <ol style="list-style-type: decimal">
@@ -413,7 +442,7 @@ Residuals   48   5745     y                       </code></pre>
 </ul>
 </div>
 </div>
-<div id="where-is-part-4" class="section level2">
+<div id="where-is-part-4" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Where is part 4? (*)</h2>
 <p>When you use two- or multi-way ANOVA, Tukey’s Honest Significant Difference only corrects for the categories <em>within</em> each explanatory variable. This quickly becomes problematic: If you’ll recall from the multiple testing lecture, with <span class="math inline">\(\alpha = 0.05\)</span>, with as little as three explanatory variables, you will already have a chance of <span class="math inline">\(1 - (1 - 0.05)^3 \approx 14.3\%\)</span> chance of at least one false positive among all comparisons.</p>
 <p>In order to correct for this, you would need to somehow obtain uncorrected <span class="math inline">\(p\)</span>-values from <code>TukeyHSD</code> and then perform multiple testing correction for the total number of comparisons. This is unfortunately not very easy to do, so <b>Dr. van Mil and I decided that it would not be part of the GRS course</b>.</p>
@@ -457,6 +486,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

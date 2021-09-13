@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Study Design | General Research Skills</title>
   <meta name="description" content="Chapter 3 Study Design | General Research Skills" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Study Design | General Research Skills" />
   <meta property="og:type" content="book" />
@@ -32,6 +32,7 @@
   
 <link rel="prev" href="random-variables.html"/>
 <link rel="next" href="hypothesis-testing.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,7 +50,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
@@ -57,18 +59,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -88,7 +90,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -121,6 +123,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -138,97 +141,121 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="installation-tutorial.html"><a href="installation-tutorial.html"><i class="fa fa-check"></i><b>1</b> Installation &amp; Tutorial</a><ul>
-<li class="chapter" data-level="1.1" data-path="installation-tutorial.html"><a href="installation-tutorial.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a><ul>
+<li class="chapter" data-level="1" data-path="installation-tutorial.html"><a href="installation-tutorial.html"><i class="fa fa-check"></i><b>1</b> Installation &amp; Tutorial</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="installation-tutorial.html"><a href="installation-tutorial.html#installation-guide"><i class="fa fa-check"></i><b>1.1</b> Installation Guide</a>
+<ul>
 <li class="chapter" data-level="" data-path="installation-tutorial.html"><a href="installation-tutorial.html#note-about-tinytex"><i class="fa fa-check"></i>Note about TinyTeX</a></li>
 <li class="chapter" data-level="" data-path="installation-tutorial.html"><a href="installation-tutorial.html#note-about-installation-problems-in-general"><i class="fa fa-check"></i>Note about installation problems in general</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="installation-tutorial.html"><a href="installation-tutorial.html#about-rstudio-r-markdown"><i class="fa fa-check"></i><b>1.2</b> About RStudio &amp; R Markdown</a></li>
 <li class="chapter" data-level="1.3" data-path="installation-tutorial.html"><a href="installation-tutorial.html#about-the-r-language"><i class="fa fa-check"></i><b>1.3</b> About the R Language</a></li>
-<li class="chapter" data-level="1.4" data-path="installation-tutorial.html"><a href="installation-tutorial.html#tutorials"><i class="fa fa-check"></i><b>1.4</b> Tutorials</a><ul>
+<li class="chapter" data-level="1.4" data-path="installation-tutorial.html"><a href="installation-tutorial.html#tutorials"><i class="fa fa-check"></i><b>1.4</b> Tutorials</a>
+<ul>
 <li class="chapter" data-level="1.4.1" data-path="installation-tutorial.html"><a href="installation-tutorial.html#exercise-swirl"><i class="fa fa-check"></i><b>1.4.1</b> Exercise: <code>swirl</code></a></li>
 <li class="chapter" data-level="1.4.2" data-path="installation-tutorial.html"><a href="installation-tutorial.html#exercise-learnr-optional"><i class="fa fa-check"></i><b>1.4.2</b> Exercise <code>learnr</code> (optional)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>2</b> Random Variables</a><ul>
-<li class="chapter" data-level="2.1" data-path="random-variables.html"><a href="random-variables.html#what-are-random-variables"><i class="fa fa-check"></i><b>2.1</b> What are Random Variables?</a><ul>
+<li class="chapter" data-level="2" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>2</b> Random Variables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="random-variables.html"><a href="random-variables.html#what-are-random-variables"><i class="fa fa-check"></i><b>2.1</b> What are Random Variables?</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="random-variables.html"><a href="random-variables.html#exercise"><i class="fa fa-check"></i><b>2.1.1</b> Exercise</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="random-variables.html"><a href="random-variables.html#degrees-of-freedom"><i class="fa fa-check"></i><b>2.2</b> Degrees of Freedom</a><ul>
+<li class="chapter" data-level="2.2" data-path="random-variables.html"><a href="random-variables.html#degrees-of-freedom"><i class="fa fa-check"></i><b>2.2</b> Degrees of Freedom</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="random-variables.html"><a href="random-variables.html#exercises"><i class="fa fa-check"></i><b>2.2.1</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="study-design.html"><a href="study-design.html"><i class="fa fa-check"></i><b>3</b> Study Design</a><ul>
-<li class="chapter" data-level="3.1" data-path="study-design.html"><a href="study-design.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a><ul>
+<li class="chapter" data-level="3" data-path="study-design.html"><a href="study-design.html"><i class="fa fa-check"></i><b>3</b> Study Design</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="study-design.html"><a href="study-design.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="study-design.html"><a href="study-design.html#from-research-question-to-statistical-model"><i class="fa fa-check"></i><b>3.1.1</b> From Research Question to Statistical Model</a></li>
 <li class="chapter" data-level="3.1.2" data-path="study-design.html"><a href="study-design.html#statistical-models-spreadsheet-and-experimental-design"><i class="fa fa-check"></i><b>3.1.2</b> Statistical models, Spreadsheet and Experimental Design</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="study-design.html"><a href="study-design.html#elements-of-experimental-design"><i class="fa fa-check"></i><b>3.2</b> Elements of Experimental Design</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing</a><ul>
+<li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis Testing</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
 <li class="chapter" data-level="4.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#statistics-test-statistics-hypothesis-tests"><i class="fa fa-check"></i><b>4.2</b> Statistics, test-statistics &amp; hypothesis tests</a></li>
 <li class="chapter" data-level="4.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test-step-by-step"><i class="fa fa-check"></i><b>4.3</b> One sample t-test: step by step</a></li>
 <li class="chapter" data-level="4.4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#assumptions"><i class="fa fa-check"></i><b>4.4</b> Assumptions</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="statistical-tests.html"><a href="statistical-tests.html"><i class="fa fa-check"></i><b>5</b> Statistical Tests</a><ul>
-<li class="chapter" data-level="5.1" data-path="statistical-tests.html"><a href="statistical-tests.html#t-test"><i class="fa fa-check"></i><b>5.1</b> T-Test</a><ul>
+<li class="chapter" data-level="5" data-path="statistical-tests.html"><a href="statistical-tests.html"><i class="fa fa-check"></i><b>5</b> Statistical Tests</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="statistical-tests.html"><a href="statistical-tests.html#t-test"><i class="fa fa-check"></i><b>5.1</b> T-Test</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="statistical-tests.html"><a href="statistical-tests.html#choosing-the-right-t-test"><i class="fa fa-check"></i><b>5.1.1</b> Choosing the right <span class="math inline">\(t\)</span>-test</a></li>
 <li class="chapter" data-level="5.1.2" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-1"><i class="fa fa-check"></i><b>5.1.2</b> Exercises</a></li>
 <li class="chapter" data-level="5.1.3" data-path="statistical-tests.html"><a href="statistical-tests.html#understanding-how-the-t-test-works"><i class="fa fa-check"></i><b>5.1.3</b> Understanding how the <span class="math inline">\(t\)</span>-test works</a></li>
 <li class="chapter" data-level="5.1.4" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-2"><i class="fa fa-check"></i><b>5.1.4</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="statistical-tests.html"><a href="statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>5.2</b> Chi-Squared Test</a><ul>
+<li class="chapter" data-level="5.2" data-path="statistical-tests.html"><a href="statistical-tests.html#chi-squared-test"><i class="fa fa-check"></i><b>5.2</b> Chi-Squared Test</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="statistical-tests.html"><a href="statistical-tests.html#lecture"><i class="fa fa-check"></i><b>5.2.1</b> Lecture</a></li>
 <li class="chapter" data-level="5.2.2" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-3"><i class="fa fa-check"></i><b>5.2.2</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="statistical-tests.html"><a href="statistical-tests.html#multiple-testing"><i class="fa fa-check"></i><b>5.3</b> Multiple Testing</a><ul>
+<li class="chapter" data-level="5.3" data-path="statistical-tests.html"><a href="statistical-tests.html#multiple-testing"><i class="fa fa-check"></i><b>5.3</b> Multiple Testing</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="statistical-tests.html"><a href="statistical-tests.html#lecture-1"><i class="fa fa-check"></i><b>5.3.1</b> Lecture</a></li>
 <li class="chapter" data-level="5.3.2" data-path="statistical-tests.html"><a href="statistical-tests.html#exercises-4"><i class="fa fa-check"></i><b>5.3.2</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>6</b> ANOVA</a><ul>
-<li class="chapter" data-level="6.1" data-path="anova.html"><a href="anova.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a><ul>
+<li class="chapter" data-level="6" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>6</b> ANOVA</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="anova.html"><a href="anova.html#overview"><i class="fa fa-check"></i><b>6.1</b> Overview</a>
+<ul>
 <li class="chapter" data-level="" data-path="anova.html"><a href="anova.html#summary-of-the-example-in-the-video"><i class="fa fa-check"></i>Summary of the example in the video</a></li>
 <li class="chapter" data-level="6.1.1" data-path="anova.html"><a href="anova.html#exercises-5"><i class="fa fa-check"></i><b>6.1.1</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="anova.html"><a href="anova.html#how-does-anova-work"><i class="fa fa-check"></i><b>6.2</b> How does ANOVA work?</a><ul>
+<li class="chapter" data-level="6.2" data-path="anova.html"><a href="anova.html#how-does-anova-work"><i class="fa fa-check"></i><b>6.2</b> How does ANOVA work?</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="anova.html"><a href="anova.html#exercises-6"><i class="fa fa-check"></i><b>6.2.1</b> Exercises</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="anova.html"><a href="anova.html#two-way-multi-way-interaction"><i class="fa fa-check"></i><b>6.3</b> Two-Way, Multi-Way &amp; Interaction</a><ul>
+<li class="chapter" data-level="6.3" data-path="anova.html"><a href="anova.html#two-way-multi-way-interaction"><i class="fa fa-check"></i><b>6.3</b> Two-Way, Multi-Way &amp; Interaction</a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="anova.html"><a href="anova.html#exercises-7"><i class="fa fa-check"></i><b>6.3.1</b> Exercises</a></li>
 <li class="chapter" data-level="6.3.2" data-path="anova.html"><a href="anova.html#additional-exercises"><i class="fa fa-check"></i><b>6.3.2</b> Additional Exercises (*)</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="anova.html"><a href="anova.html#where-is-part-4"><i class="fa fa-check"></i><b>6.4</b> Where is part 4? (*)</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>7</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="7.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#overview-1"><i class="fa fa-check"></i><b>7.1</b> Overview</a><ul>
+<li class="chapter" data-level="7" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html"><i class="fa fa-check"></i><b>7</b> Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#overview-1"><i class="fa fa-check"></i><b>7.1</b> Overview</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#LMsummary"><i class="fa fa-check"></i><b>7.1.1</b> Summary of the example in the video</a></li>
 <li class="chapter" data-level="7.1.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-8"><i class="fa fa-check"></i><b>7.1.2</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#step-by-step-walkthrough"><i class="fa fa-check"></i><b>7.2</b> Step-by-Step Walkthrough</a></li>
-<li class="chapter" data-level="7.3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.3</b> Model Diagnostics</a><ul>
+<li class="chapter" data-level="7.3" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#model-diagnostics"><i class="fa fa-check"></i><b>7.3</b> Model Diagnostics</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#exercises-9"><i class="fa fa-check"></i><b>7.3.1</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="simple-linear-regression.html"><a href="simple-linear-regression.html#transformation"><i class="fa fa-check"></i><b>7.4</b> Transformation</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a><ul>
+<li class="chapter" data-level="8" data-path="factorial-anova.html"><a href="factorial-anova.html"><i class="fa fa-check"></i><b>8</b> Factorial ANOVA</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="factorial-anova.html"><a href="factorial-anova.html#interaction"><i class="fa fa-check"></i><b>8.1</b> Interaction</a></li>
 <li class="chapter" data-level="8.2" data-path="factorial-anova.html"><a href="factorial-anova.html#three-example-factorial-anova-data-sets"><i class="fa fa-check"></i><b>8.2</b> Three example factorial ANOVA data sets</a></li>
 <li class="chapter" data-level="8.3" data-path="factorial-anova.html"><a href="factorial-anova.html#model-specification-and-diagnostics"><i class="fa fa-check"></i><b>8.3</b> Model specification and diagnostics</a></li>
 <li class="chapter" data-level="8.4" data-path="factorial-anova.html"><a href="factorial-anova.html#model-selection"><i class="fa fa-check"></i><b>8.4</b> Model selection</a></li>
 <li class="chapter" data-level="8.5" data-path="factorial-anova.html"><a href="factorial-anova.html#some-final-thoughts-and-visualisation"><i class="fa fa-check"></i><b>8.5</b> Some final thoughts and visualisation</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html"><i class="fa fa-check"></i><b>9</b> ANCOVA &amp; Model Selection</a><ul>
+<li class="chapter" data-level="9" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html"><i class="fa fa-check"></i><b>9</b> ANCOVA &amp; Model Selection</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
 <li class="chapter" data-level="9.2" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-ancova-explained-by-simulations"><i class="fa fa-check"></i><b>9.2</b> The ANCOVA explained by simulations</a></li>
 <li class="chapter" data-level="9.3" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-analysis-of-ancova-data-step-by-step"><i class="fa fa-check"></i><b>9.3</b> The analysis of ANCOVA data step by step</a></li>
 <li class="chapter" data-level="9.4" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#some-questions"><i class="fa fa-check"></i><b>9.4</b> Some questions</a></li>
-<li class="chapter" data-level="9.5" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#model-selection-1"><i class="fa fa-check"></i><b>9.5</b> Model Selection</a><ul>
+<li class="chapter" data-level="9.5" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#model-selection-1"><i class="fa fa-check"></i><b>9.5</b> Model Selection</a>
+<ul>
 <li class="chapter" data-level="9.5.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#exercises-10"><i class="fa fa-check"></i><b>9.5.1</b> Exercises</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a><ul>
+<li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="glm.html"><a href="glm.html#introduction-3"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
 <li class="chapter" data-level="10.2" data-path="glm.html"><a href="glm.html#poisson-glm-introduction"><i class="fa fa-check"></i><b>10.2</b> Poisson GLM: Introduction</a></li>
 <li class="chapter" data-level="10.3" data-path="glm.html"><a href="glm.html#poisson-glm-model-specification"><i class="fa fa-check"></i><b>10.3</b> Poisson GLM: Model specification</a></li>
@@ -237,14 +264,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.6" data-path="glm.html"><a href="glm.html#binomial-glm-analysing-a-binomial-glm"><i class="fa fa-check"></i><b>10.6</b> Binomial GLM: Analysing a Binomial GLM</a></li>
 <li class="chapter" data-level="10.7" data-path="glm.html"><a href="glm.html#binomial-glm-interpretation-of-the-estimates"><i class="fa fa-check"></i><b>10.7</b> Binomial GLM: Interpretation of the estimates</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a><ul>
+<li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="pca.html"><a href="pca.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="pca.html"><a href="pca.html#motivation-behind-pca"><i class="fa fa-check"></i><b>11.2</b> Motivation behind PCA</a></li>
 <li class="chapter" data-level="11.3" data-path="pca.html"><a href="pca.html#pca-fundamentals"><i class="fa fa-check"></i><b>11.3</b> PCA fundamentals</a></li>
 <li class="chapter" data-level="11.4" data-path="pca.html"><a href="pca.html#pca-in-classification"><i class="fa fa-check"></i><b>11.4</b> PCA in classification</a></li>
 <li class="chapter" data-level="11.5" data-path="pca.html"><a href="pca.html#pca-and-gradients"><i class="fa fa-check"></i><b>11.5</b> PCA and gradients</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a><ul>
+<li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#lecture-overview"><i class="fa fa-check"></i><b>12.1</b> Lecture: Overview</a></li>
 <li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-11"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
 </ul></li>
@@ -265,11 +294,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="study-design" class="section level1">
+<div id="study-design" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Study Design</h1>
 <p><small><i>In this chapter by Dr. H.G.J. van Mil, statistical considerations of experiments or studies that ensure maximal power and generalizability are explained.</i></small></p>
 <hr />
-<div id="introduction" class="section level2">
+<div id="introduction" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Introduction</h2>
 <p>In day 2, we motivated the use of statistics in empirical sciences like biology. To this end, we introduced the random variable (RV), statistical models, degrees of freedom and residuals. I ended my lectures with two notes:</p>
 <ul>
@@ -279,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Both these notes are related to <strong>experimental design</strong>, a subfield of statistics, linking statistical analysis to the acquisition of data by optimizing the process of collecting data for a study of interest.</p>
 <p>Below we start with a discussion on the relation between a research question and the statistical model. Then we discuss how the statistical model can be linked to the structure of your data set or spreadsheet, and consequently to issues of experimental design. The last screencast discusses some leading concepts in experimental design.</p>
 <p>Note that one of the assignments that you need to do during your bachelor research project is the analysis of your own experiment from the perspective of the elements of experimental design discussed today.</p>
-<div id="from-research-question-to-statistical-model" class="section level3">
+<div id="from-research-question-to-statistical-model" class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> From Research Question to Statistical Model</h3>
 <p>Chapter 2 introduced the concept of a statistical model. The screencast below will show that statistical models are actually the formalization of research questions. In case your research question is of a confirmatory nature (i.e. a yes/no question), it can be linked to statistical test using a hypothesis. This concept is also explained in paragraph <strong><em>7.1</em></strong> of <a href="https://github.com/FransRodenburg/Biostatistics-Book-Series/blob/main/Introduction_to_Biostatistics_Dec2020.pdf">Introduction to Biostatistics</a>.</p>
 <p>In the first step, the research questions translated into a hypothesis, sets the stage for your experimental design and data analysis. We do not discuss the important skills to ask the right scientific questions, we leave that to the context/field of the study, but here the creativity and quality of the researcher might already become apparent.</p>
@@ -315,7 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Also see: <a href="https://stats.stackexchange.com/q/432866/176202">Famous easy to understand examples of a confounding variable invalidating a study</a></p>
 </div>
-<div id="statistical-models-spreadsheet-and-experimental-design" class="section level3">
+<div id="statistical-models-spreadsheet-and-experimental-design" class="section level3" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Statistical models, Spreadsheet and Experimental Design</h3>
 <p>As argued previously, the structure of the statistical model is directly related to the structure of the spreadsheet. A well formed spreadsheet for statistical analysis should have <strong>variables as columns</strong> and individual <strong>measurements as as rows</strong>. This format is called <em>tidy</em>. A model is therefore a good starting point for the experimental design stage:</p>
 <ul>
@@ -336,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Next lecture is on experimental design proper.</p>
 </div>
 </div>
-<div id="elements-of-experimental-design" class="section level2">
+<div id="elements-of-experimental-design" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Elements of Experimental Design</h2>
 <p>The aim of experimental design is, to reduce, or take into account, the impact of extraneous variables.</p>
 <p>If done correctly, the power and precision of the statistical analysis is increased.</p>
@@ -391,6 +420,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
