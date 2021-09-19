@@ -59,9 +59,10 @@ ancova-model-selection
 introduction-2
 the-ancova-explained-by-simulations
 the-analysis-of-ancova-data-step-by-step
-some-questions
-model-selection-1
 exercises-10
+model-selection-1
+exercises-11
+exercises-hard
 glm
 introduction-3
 poisson-glm-introduction
@@ -78,4 +79,4 @@ pca-in-classification
 pca-and-gradients
 overview-of-techniques
 lecture-overview
-exercises-11
+exercises-12

@@ -247,11 +247,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="9.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#introduction-2"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
 <li class="chapter" data-level="9.2" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-ancova-explained-by-simulations"><i class="fa fa-check"></i><b>9.2</b> The ANCOVA explained by simulations</a></li>
-<li class="chapter" data-level="9.3" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-analysis-of-ancova-data-step-by-step"><i class="fa fa-check"></i><b>9.3</b> The analysis of ANCOVA data step by step</a></li>
-<li class="chapter" data-level="9.4" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#some-questions"><i class="fa fa-check"></i><b>9.4</b> Some questions</a></li>
-<li class="chapter" data-level="9.5" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#model-selection-1"><i class="fa fa-check"></i><b>9.5</b> Model Selection</a>
+<li class="chapter" data-level="9.3" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#the-analysis-of-ancova-data-step-by-step"><i class="fa fa-check"></i><b>9.3</b> The analysis of ANCOVA data step by step</a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#exercises-10"><i class="fa fa-check"></i><b>9.5.1</b> Exercises</a></li>
+<li class="chapter" data-level="9.3.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#exercises-10"><i class="fa fa-check"></i><b>9.3.1</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#model-selection-1"><i class="fa fa-check"></i><b>9.4</b> Model Selection</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#exercises-11"><i class="fa fa-check"></i><b>9.4.1</b> Exercises</a></li>
+<li class="chapter" data-level="9.4.2" data-path="ancova-model-selection.html"><a href="ancova-model-selection.html#exercises-hard"><i class="fa fa-check"></i><b>9.4.2</b> Exercises (hard)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>10</b> GLM</a>
@@ -275,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html"><i class="fa fa-check"></i><b>12</b> Overview of Techniques</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#lecture-overview"><i class="fa fa-check"></i><b>12.1</b> Lecture: Overview</a></li>
-<li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-11"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
+<li class="chapter" data-level="12.2" data-path="overview-of-techniques.html"><a href="overview-of-techniques.html#exercises-12"><i class="fa fa-check"></i><b>12.2</b> Exercises</a></li>
 </ul></li>
 </ul>
 
@@ -316,22 +319,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>An ANCOVA analysis is performed step by step follow the tutorial for ANCOVA. In this screencast the differences with a factorial ANOVA are emphasized.</p>
 <iframe src="https://www.youtube.com/embed/mRoRvT6EK90" width="672" height="400px">
 </iframe>
-</div>
-<div id="some-questions" class="section level2" number="9.4">
-<h2><span class="header-section-number">9.4</span> Some questions</h2>
-<p>Below part of the output of a ANOCA analysis.</p>
+<div id="exercises-10" class="section level3" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Exercises</h3>
+<p>Below part of the output of a ANOVA analysis.</p>
 <pre><code>Residuals:
     Min      1Q  Median      3Q     Max 
 -0.8528 -0.3010  0.0563  0.2708  0.8555 
 
 Coefficients:
                                Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                     5.09856   0.36516  13.963 4.25e-11 ***
-TreatB                             1?     0.51641  -1.405  0.17712    
-TreatD                         -1.30794       2?    -2.533  0.02084 *  
+(Intercept)                     5.09856    0.36516  13.963 4.25e-11 ***
+TreatB                             1?      0.51641  -1.405  0.17712    
+TreatC                         -1.30794       2?    -2.533  0.02084 *  
 Concentration                   0.06073    0.08729   0.696  0.49547    
-TreatmentB:Concentration        0.43544    0.12345     ?3  0.00241 ** 
-TreatmentControl:Concentration  0.24936    0.12345   2.020  0.05852 .  
+TreatmentB:Concentration        0.43544    0.12345     ?3   0.00241 ** 
+TreatmentC:Concentration        0.24936    0.12345   2.020  0.05852 .  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -341,16 +343,24 @@ F-statistic:    13 on 5 and 18 DF,  p-value: 1.892e-05</code></pre>
 <ol style="list-style-type: decimal">
 <li>Calculate the missing numbers <code>?1</code>, <code>?2</code> and <code>?3</code>.</li>
 <li>How much of the variance is explained by this model?</li>
-<li>How many replications were done of within this experiment?</li>
-<li>What is the estimate for the absolute value of the intercept of <code>TreatD</code>?</li>
+<li>What was the total sample size of this experiment?</li>
+<li>Based on this output, do you think there is an interaction? Explain.</li>
+<li>What is the estimate for the intercept of <code>TreatA</code>? What about <code>TreatB</code> and <code>TreatC</code>?</li>
+<li>Draw what this model would look like. You may use R, or pen and paper.</li>
 </ol>
 </div>
-<div id="model-selection-1" class="section level2" number="9.5">
-<h2><span class="header-section-number">9.5</span> Model Selection</h2>
+</div>
+<div id="model-selection-1" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> Model Selection</h2>
 <iframe src="https://www.youtube.com/embed/n2kWXqR5nnw" width="672" height="400px">
 </iframe>
-<div id="exercises-10" class="section level3" number="9.5.1">
-<h3><span class="header-section-number">9.5.1</span> Exercises</h3>
+<div id="exercises-11" class="section level3" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Exercises</h3>
+<p>A set of exercises can be downloaded <a href="exercises/ANCOVA/MultipleRegression_assignment.Rmd">here</a> and its required data set <a href="exercises/ANCOVA/fruitfly.csv">here</a>. <br><small><em>(If you can’t knit, click <a href="exercises/ANCOVA/MultipleRegression_assignment.pdf">here</a> for a PDF version of the exercises.)</em></small></p>
+<hr />
+</div>
+<div id="exercises-hard" class="section level3" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Exercises (hard)</h3>
 <p>In order to study the effect of caviar on health, a survey is distributed in a city on whether the respondents have ever eaten caviar, and if so, how frequently they eat caviar. After receiving the responses, 100 random individuals from each of the following groups are invited for a health check-up:</p>
 <ul>
 <li>Group A: Has never consumed caviar;</li>
@@ -360,8 +370,9 @@ F-statistic:    13 on 5 and 18 DF,  p-value: 1.892e-05</code></pre>
 <li>Group E: Eats caviar about once per month.</li>
 </ul>
 <ol style="list-style-type: decimal">
-<li><p>What problems do you think there might be with this study design?</p></li>
-<li><p>(…) under construction.</p></li>
+<li><p>What problems do you think there might be with this study design? <em>(HINT: There are at least two major flaws.)</em></p></li>
+<li><p>Can you come up with a better design for the research question?</p></li>
+<li><p>Can you come up with a minimal sample size needed to conduct this research? You can estimate the minimal required sample size for both the original design and your own version.</p></li>
 </ol>
 
 </div>
