@@ -71,6 +71,7 @@ poisson-glm-analysis-of-glm-data-and-interpretation
 binomial-glm-motivation-binomial-glm
 binomial-glm-analysing-a-binomial-glm
 binomial-glm-interpretation-of-the-estimates
+exercises-choose-the-probability-distribution
 pca
 introduction-4
 motivation-behind-pca

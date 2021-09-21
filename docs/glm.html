@@ -265,7 +265,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="glm.html"><a href="glm.html#poisson-glm-analysis-of-glm-data-and-interpretation"><i class="fa fa-check"></i><b>10.4</b> Poisson GLM: Analysis of GLM data and interpretation</a></li>
 <li class="chapter" data-level="10.5" data-path="glm.html"><a href="glm.html#binomial-glm-motivation-binomial-glm"><i class="fa fa-check"></i><b>10.5</b> Binomial GLM: Motivation Binomial GLM</a></li>
 <li class="chapter" data-level="10.6" data-path="glm.html"><a href="glm.html#binomial-glm-analysing-a-binomial-glm"><i class="fa fa-check"></i><b>10.6</b> Binomial GLM: Analysing a Binomial GLM</a></li>
-<li class="chapter" data-level="10.7" data-path="glm.html"><a href="glm.html#binomial-glm-interpretation-of-the-estimates"><i class="fa fa-check"></i><b>10.7</b> Binomial GLM: Interpretation of the estimates</a></li>
+<li class="chapter" data-level="10.7" data-path="glm.html"><a href="glm.html#binomial-glm-interpretation-of-the-estimates"><i class="fa fa-check"></i><b>10.7</b> Binomial GLM: Interpretation of the estimates</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="glm.html"><a href="glm.html#exercises-choose-the-probability-distribution"><i class="fa fa-check"></i><b>10.7.1</b> Exercises: Choose the Probability Distribution</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="pca.html"><a href="pca.html"><i class="fa fa-check"></i><b>11</b> PCA</a>
 <ul>
@@ -303,10 +306,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <div id="introduction-3" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Introduction</h2>
-<p>Data do not always abide to the assumptions of our statistical models. This might be due to extreme values in our data, which might be outliers, or due to bad experimentation. But there are also many instances where the deviation from the assumptions are due to more data fundamental properties. We have observed this in the <code>fruitfly</code> and <code>rats</code> data sets. Longevity and survival can be interpreted as the time we need to wait until the fruit flies or rats dies. Most often waiting times are not distributed are a normal distribution but as a so-called Poisson distribution. Counting processes also result in Poisson distributions.</p>
-<p>The same is true if our response variable is not numerical but for instance a factor with two levels; e.g. the present or absence of a particular object, success or failure, dead or alive, sprouting or not, Gene on or off, to name a few. These two valued response data are called binomial data and the related distribution is the binomial distribution.</p>
-<p>Both waiting times, counts and binomial data occur commonly in life science research. In order to accommodate for the analysis of these data, we need to generalized the linear model methodology in such a way that will allow for the statistical analysis of Poisson and binomial data and keeps the ease of interpretation of the linear models. The method that was developed is called the Generalized Linear Model, or GLM.</p>
-<p>Below we will discus two instances of GLMs, one for Poisson and one for Binomial data. Beside a small addition in the coding,the GLM transforms the model rather that the response variable, this will allow us to give a standard interpretation to intercepts and in particular the slopes.</p>
+<p>Data do not always abide to the assumptions of our statistical models. This might be due to extreme values in our data, which might be outliers, or due to bad experimentation. But there are also many instances where the deviation from the assumptions are due to more data fundamental properties. We have observed this in the <code>fruitfly</code> and <code>rats</code> data sets. Longevity and survival can be interpreted as the time we need to wait until the fruit flies or rats dies. Most often waiting times are not distributed as a normal distribution. Counting processes also result in non-normal distributions (Poisson).</p>
+<p>The same is true if our response variable is not numeric but for instance a factor with two levels; e.g. the present or absence of a particular object, success or failure, dead or alive, sprouting or not, gene on or off, to name a few. These two-valued response data are called binomial data and the related distribution is the binomial distribution.</p>
+<p>Waiting times, counts and binomial data occur commonly in life science research. In order to accommodate for the analysis of these data, we need to generalize the linear model in such a way that will allow for the statistical analysis of Poisson and binomial data and keeps the ease of interpretation of the linear models. The method that was developed is called the generalized linear model, or GLM.</p>
+<p>Below we will discuss two instances of GLMs, one for Poisson and one for binomial data. Beside a small addition in the coding, the GLM transforms the model rather that the response variable, this will allow us to give a standard interpretation to intercepts and in particular the slopes.</p>
 <p>Elements of these lectures are discussed in chapter 3 of the book <a href="https://github.com/FransRodenburg/Biostatistics-Book-Series/blob/main/Elements_of_Biostatistics_Sep2020.pdf">Elements of Biostatistics</a>.</p>
 </div>
 <div id="poisson-glm-introduction" class="section level2" number="10.2">
@@ -377,7 +380,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>what is the log odds-ratio?</li>
 </ul>
+<hr />
+<div id="exercises-choose-the-probability-distribution" class="section level3" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> Exercises: Choose the Probability Distribution</h3>
+<p>A set of exercises can be downloaded <a href="exercises/GLM/ChooseTheProbabilityDistribution.Rmd">here</a> and its required data sets <a href="exercises/GLM/Day12.Rdata">here</a>. <br><small><em>(If you can’t knit, click <a href="exercises/GLM/ChooseTheProbabilityDistribution.pdf">here</a> for a PDF version of the exercises.)</em></small></p>
+<hr />
 
+</div>
 </div>
 </div>
             </section>
