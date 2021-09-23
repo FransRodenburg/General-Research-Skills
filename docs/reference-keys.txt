@@ -78,6 +78,7 @@ motivation-behind-pca
 pca-fundamentals
 pca-in-classification
 pca-and-gradients
+exercises-12
 overview-of-techniques
 lecture-overview
-exercises-12
+exercises-13
