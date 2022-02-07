@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Installation &amp; Tutorial | General Research Skills</title>
-  <meta name="description" content="Chapter 1 Installation &amp; Tutorial | General Research Skills" />
+  <title>Chapter 11 High-Dimensional Data Analysis | General Research Skills</title>
+  <meta name="description" content="Chapter 11 High-Dimensional Data Analysis | General Research Skills" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Installation &amp; Tutorial | General Research Skills" />
+  <meta property="og:title" content="Chapter 11 High-Dimensional Data Analysis | General Research Skills" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Installation &amp; Tutorial | General Research Skills" />
+  <meta name="twitter:title" content="Chapter 11 High-Dimensional Data Analysis | General Research Skills" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="random-variables.html"/>
+<link rel="prev" href="pca.html"/>
+<link rel="next" href="glm.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -310,68 +310,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="installation-tutorial" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Installation &amp; Tutorial</h1>
-<p>Throughout this course, we will use RStudio. To use RStudio, you need to install <strong>both</strong> R and RStudio.</p>
-<p><small><i>(Even if you have an existing version, I recommend getting the latest version using the guide below.)</i></small></p>
-<div id="installation-guide" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Installation Guide</h2>
-<iframe src="https://www.youtube.com/embed/2Sovzf6lVRo" width="672" height="400px" data-external="1">
-</iframe>
-<p>If you’re comfortable with computer software, it boils down to:</p>
-<ul>
-<li>Install R;</li>
-<li>Install RStudio;</li>
-<li>Open RStudio and try to knit a template R markdown file.</li>
-</ul>
-<p>If you can’t knit to PDF, see the note below and try knitting to HTML instead.</p>
-<div id="note-about-tinytex" class="section level3 unnumbered">
-<h3>Note about TinyTeX</h3>
-<ul>
-<li><strong>TinyTeX is not required for this course</strong>. If you want to knit to PDF, you have to install TinyTeX. This has several advantages over HTML and Word, which are explained in the second video. For the portfolio, <strong>all you need is a working version of RStudio, and to be able to knit to HTML</strong>.</li>
-</ul>
-</div>
-<div id="note-about-installation-problems-in-general" class="section level3 unnumbered">
-<h3>Note about installation problems in general</h3>
-<p>To ensure a smooth experience throughout the course, <strong>address installation issues early on</strong>. If you’re following this course in the context of your biology education at Leiden University, you can always contact Dr. H.G.J. van Mil or me about installation issues.</p>
-<p>Otherwise, see the general tips below, or try asking a question on <a href="https://stackoverflow.com/tour">Stackoverflow</a>.</p>
-<p>Some general tips that will save you a lot of headaches with software during your education:</p>
-<ul>
-<li>Setting your system language to English (<a href="https://support.microsoft.com/en-us/windows/manage-display-language-settings-in-windows-10-219f28b0-9881-cd4c-75ca-dba919c52321">Windows</a>, <a href="https://support.apple.com/en-gb/guide/mac-help/mh26684/mac">Mac</a>) makes everything a lot easier to find;</li>
-<li>If you store data in Excel, <a href="https://support.microsoft.com/en-us/office/change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e">setting the decimal separator to a dot (.) instead of a comma (,)</a> will also save you a lot of extra effort;</li>
-<li>If you are on Windows, I highly recommend working on an account with <a href="https://support.microsoft.com/en-us/windows/create-a-local-user-or-administrator-account-in-windows-10-20de74e0-ac7f-3502-a866-32915af2a34d">administrator rights</a> and setting <a href="https://support.microsoft.com/en-us/help/975787/guided-help-adjust-user-account-control-settings-in-windows-7-and-wind">user account control</a> to “Never notify”. <small><i>(Link says Windows 7 &amp; 8, but it works the same for Windows 10.)</i></small></li>
-</ul>
-</div>
-</div>
-<div id="about-rstudio-r-markdown" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> About RStudio &amp; R Markdown</h2>
-<p>Watch the video on the RStudio interface below.</p>
-<iframe src="https://www.youtube.com/embed/AHAR7j-IUOw" width="672" height="400px" data-external="1">
-</iframe>
-</div>
-<div id="about-the-r-language" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> About the R Language</h2>
-<p>There are two great tutorial for learning the basics in R. This video shows how to use them:</p>
-<iframe src="https://www.youtube.com/embed/eKKil5iyxLM" width="672" height="400px" data-external="1">
-</iframe>
-</div>
-<div id="tutorials" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Tutorials</h2>
-<p>Every day there will be exercises in RStudio to teach you how to program, how to run your own analyses and how to interpret output.</p>
-<p>The optional exercises are for those who want to improve their statistics beyond what is required to pass the course.</p>
-<div id="exercise-swirl" class="section level3" number="1.4.1">
-<h3><span class="header-section-number">1.4.1</span> Exercise: <code>swirl</code></h3>
-<p><a href="https://youtu.be/eKKil5iyxLM?t=148">Watch the part about <code>swirl</code></a> and complete chapters 1, 2, 4, 7 &amp; 8 from the R Programming course.</p>
-</div>
-<div id="exercise-learnr-optional" class="section level3" number="1.4.2">
-<h3><span class="header-section-number">1.4.2</span> Exercise <code>learnr</code> (optional)</h3>
-<p>Many data scientists prefer the <code>tidyverse</code> over base R. This is a collection of packages aimed at writing code in a more ‘tidy’ manner, using the pipeline notation.</p>
-<p>Complete the <strong>Data basics</strong>, <strong>Filter observations</strong>, <strong>Create new variables</strong> and <strong>Summarise Tables</strong> chapters from the <code>learnr</code> package <a href="https://youtu.be/eKKil5iyxLM?t=114">as explained in the video</a>.</p>
-<p><small><em>(If you don’t see a <strong>Tutorial</strong> tab, try running <code>install.packages("learnr")</code> in the console and then restart RStudio.)</em></small></p>
+<div id="high-dimensional-data-analysis" class="section level1" number="11">
+<h1><span class="header-section-number">Chapter 11</span> High-Dimensional Data Analysis</h1>
+<p><small><i>In this special chapter, bioinformatician Dr. Bastienne Vriesendorp will show you a real analysis of high-dimensional transcriptomics data (<strong>RNAseq</strong>). We will use various techniques that you have learned throughout the course, including PCA and multiple testing correction.</i></small></p>
 <hr />
-<p>From here on out, I will assume basic familiarity with R syntax and the RStudio interface.</p>
-
+<div id="lecture-2" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Lecture</h2>
+<p>(…) to be included.</p>
 </div>
+<div id="exercises-14" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Exercises</h2>
+<p>(…) to be included.</p>
+
 </div>
 </div>
             </section>
@@ -379,8 +329,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="random-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="pca.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
