@@ -30,8 +30,7 @@ multiple-testing
 lecture-1
 exercises-5
 study-design
-keeping-a-lab-journal
-study-design-lecture
+lecture-2
 anova
 overview
 exercises-6
@@ -71,7 +70,7 @@ pca-in-classification
 pca-and-gradients
 exercises-13
 high-dimensional-data-analysis
-lecture-2
+lecture-3
 exercises-14
 glm
 introduction-3
