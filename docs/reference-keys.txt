@@ -30,10 +30,8 @@ multiple-testing
 lecture-1
 exercises-5
 study-design
-introduction-1
-from-research-question-to-statistical-model
-statistical-models-spreadsheet-and-experimental-design
-elements-of-experimental-design
+keeping-a-lab-journal
+study-design-lecture
 anova
 overview
 exercises-6
@@ -58,7 +56,7 @@ model-specification-and-diagnostics
 model-selection
 some-final-thoughts-and-visualisation
 ancova-model-selection
-introduction-2
+introduction-1
 the-ancova-explained-by-simulations
 the-analysis-of-ancova-data-step-by-step
 exercises-11
@@ -66,7 +64,7 @@ model-selection-1
 exercises-12
 exercises-hard
 pca
-introduction-3
+introduction-2
 motivation-behind-pca
 pca-fundamentals
 pca-in-classification
@@ -76,7 +74,7 @@ high-dimensional-data-analysis
 lecture-2
 exercises-14
 glm
-introduction-4
+introduction-3
 poisson-glm-introduction
 poisson-glm-model-specification
 poisson-glm-analysis-of-glm-data-and-interpretation
