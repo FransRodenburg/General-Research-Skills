@@ -69,8 +69,9 @@ pca-fundamentals
 pca-in-classification
 pca-and-gradients
 exercises-13
-high-dimensional-data-analysis
-lecture-3
+bioinformatics-workshop
+preparation
+rnaseq
 exercises-14
 glm
 introduction-3
