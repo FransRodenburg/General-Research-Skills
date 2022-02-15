@@ -5,6 +5,11 @@ date: "2/7/2022"
 output: word_document
 ---
 
+# Background
+
+An experiment was conducted on human cells (HeLa) to find out the effect of a factor "N" on coagulation. Four levels of "N" were administered to the cells, but for simplicity, we well call these "low" (N5, N7) and "high" (N18, N30). 
+RNAseq generates expression levels of thousands of genes, so through this analysis we will try to narrow it down to the most important differences.
+
 # Getting Started
  
 1. Download the data (`counts_cells.csv` and `metadata_genes.csv`) and save both files in the same location as this R markdown file.
@@ -30,6 +35,8 @@ library("stringr") # function string_extract_all
 library("DESeq2")
 ```
 
+# Data Cleaning
+
 4. Load the data and perform the required data cleaning steps:
 
 ```{r data, include = FALSE}
@@ -45,10 +52,15 @@ vlookup_description <- data.frame(annot_data[, c(2, 8)])
 # Here a "regex" (regular expression) is used, where ".+?(?=\\[)" means:
 # Match any characters (".*"), as few as possible ("?"),
 # until a "[ is found "(?=\\[)".
-
 vlookup_description$description <- str_extract_all(
   vlookup_description$description, ".+?(?=\\[)"
 )
+
+# Remove empty descriptions
+vlookup_description$description[
+  vlookup_description$description == "character(0)"
+] <- NA
+
 # Replace dots with underscores
 colnames(count_data) <- sub("\\.", "_", colnames(count_data))
 
@@ -91,6 +103,8 @@ normal_counts[, -1]  <- lapply(
 
 Several times in this script, `<- NULL` is used on a column. What does this do and why do you think this step is performed?
 
+# Exploratory Analysis
+
 5. You should now have read the data, performed the filtering steps and applied normalization with TPM, transcription length and sequencing length. Next we will use PCA to inspect our normalized data.
 
 ```{r PCA, echo = FALSE}
@@ -115,6 +129,9 @@ legend("topright", legend = c("N5", "N7", "N18", "N30"), col = cols, pch = 19)
 6. Run the script above and answer the following questions about the resulting plot:
     * What do you see in the plot? Does it match your expectations?
     * If you remove the hastag (`#`) from the second line of the chunk, a PCA will be run on the original data instead (without normalization). Does this change your conclusion? Which results do you think are more useful?
+
+# Formal Analysis
+
 7. Now that we have inspected the data quality, let's run an analysis for the difference between N-low quantity and N-high quantity
 
 ```{r DESeq, echo = FALSE}
@@ -136,6 +153,8 @@ DESEQ_MM_ED <- estimateDispersions(DESEQ_MM_ES)
 deseq_test  <- nbinomWaldTest(DESEQ_MM_ED)
 results_DES <- results(deseq_test, pAdjustMethod = "BH")
 ```
+
+# Processing the Results
 
 8. Try to create a volcano plot of the results. You can consult the slides from the lecture for an example of what the result should look like.
 
